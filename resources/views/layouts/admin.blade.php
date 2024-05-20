@@ -53,9 +53,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ url('admin') }}">{{ __('Admin') }}</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.posts.index') }}">{{ __('Posts') }}</a>
-              </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
