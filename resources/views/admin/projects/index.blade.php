@@ -43,7 +43,11 @@
                     View
                     <i class="fa-solid fa-eye fa-sm"></i>
                   </a>
-                  /Edit/Delete
+                  <a class="btn btn-primary badge p-1" href="{{ route('admin.projects.edit', $project) }}" title="Edit">
+                    Edit
+                    <i class="fa-solid fa-pencil fa-sm"></i>
+                  </a>
+                  /Delete
                 </td>
               </tr>
             @empty
