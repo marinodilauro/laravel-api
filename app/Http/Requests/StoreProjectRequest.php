@@ -25,6 +25,8 @@ class StoreProjectRequest extends FormRequest
             'title' => 'required|min:5|max:150',
             'description' => 'nullable|max:250',
             'thumb' => 'nullable|max:255',
+            'project_link' => 'nullable|max:255',
+            'repo_link' => 'nullable|max:255'
         ];
     }
 }

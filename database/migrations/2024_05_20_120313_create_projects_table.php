@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('slug', 150);
             $table->text('description', 250)->nullable();
             $table->string('thumb', 255)->nullable();
+            $table->string('project_link', 255)->nullable();
+            $table->string('repo_link', 255)->nullable();
             $table->timestamps();
         });
     }
