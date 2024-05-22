@@ -59,9 +59,9 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Project $Project)
+    public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -69,7 +69,20 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        // dd($request);
+
+        // validate
+        $val_data = $request->validated();
+        $slug = Str::slug($request->title, '-');
+
+        $val_data['slug'] = $slug;
+
+        // create
+        // dd($val_data);
+        $project->update($val_data);
+
+        // redirect
+        return to_route('admin.projects.index');
     }
 
     /**
@@ -77,6 +90,8 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+
+        return to_route('projects.index');
     }
 }
