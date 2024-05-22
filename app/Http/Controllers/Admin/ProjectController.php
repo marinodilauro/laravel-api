@@ -95,7 +95,7 @@ class ProjectController extends Controller
         }
 
         // create
-        dd($val_data);
+        // dd($val_data);
         $project->update($val_data);
 
         // redirect

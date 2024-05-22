@@ -43,9 +43,9 @@
                     <img width="100" src="{{ asset('storage/' . $project->thumb) }}" alt="{{ $project->title }}">
                   @endif
                 </td>
-                <td>{{ $project->title }}</td>
-                <td>{{ $project->slug }}</td>
-                <td class="text-truncate" style="max-width:1px">{{ $project->description }}</td>
+                <td width="10%">{{ $project->title }}</td>
+                <td width="10%">{{ $project->slug }}</td>
+                <td width="35%">{{ $project->description }}</td>
                 <td class="text-truncate" style="max-width:1px">{{ $project->project_link }}</td>
                 <td class="text-truncate" style="max-width:1px">{{ $project->repo_link }}</td>
                 <td>
