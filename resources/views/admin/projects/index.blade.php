@@ -14,6 +14,9 @@
   <section class="py-5">
     <div class="custom_container m-auto">
       <h4 class="text-muted">All projects</h4>
+
+      @include('partials.action-confirmation')
+
       <div class="table-responsive">
         <table class="table table-light table-hover">
           <thead>
@@ -85,7 +88,7 @@
                         </div>
 
                         <div class="modal-body text-center">
-                          You are about to delete "{{ $project->title }}""
+                          You are about to delete "{{ $project->title }}"
                           <br>
                           Are you sure you want to delete this project?
                         </div>

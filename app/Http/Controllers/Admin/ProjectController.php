@@ -8,7 +8,7 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use PhpParser\Node\Expr\PreDec;
+
 
 class ProjectController extends Controller
 {
@@ -41,15 +41,17 @@ class ProjectController extends Controller
         $slug = Str::slug($request->title, '-');
         $val_data['slug'] = $slug;
 
-        $image_path = Storage::put('uploads', $val_data['thumb']);
-        $val_data['thumb'] = $image_path;
+        if ($request->has('thumb')) {
+            $image_path = Storage::put('uploads', $val_data['thumb']);
+            $val_data['thumb'] = $image_path;
+        }
 
         // create
         // dd($val_data);
         Project::create($val_data);
 
         // redirect
-        return to_route('admin.projects.index');
+        return to_route('admin.projects.index')->with('message', "Project created succesfully!");
     }
 
     /**
@@ -78,18 +80,26 @@ class ProjectController extends Controller
         // validate
         $val_data = $request->validated();
 
+
         $slug = Str::slug($request->title, '-');
         $val_data['slug'] = $slug;
 
-        $image_path = Storage::put('uploads', $val_data['thumb']);
-        $val_data['thumb'] = $image_path;
+        if ($request->has('thumb')) {
+
+            if ($project->thumb) {
+                Storage::delete($project->thumb);
+            }
+
+            $image_path = Storage::put('uploads', $val_data['thumb']);
+            $val_data['thumb'] = $image_path;
+        }
 
         // create
-        // dd($val_data);
+        dd($val_data);
         $project->update($val_data);
 
         // redirect
-        return to_route('admin.projects.index');
+        return to_route('admin.projects.index')->with('message', "Project $project->title updated succesfully!");
     }
 
     /**
@@ -97,8 +107,12 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        if ($project->thumb) {
+            Storage::delete($project->thumb);
+        }
+
         $project->delete();
 
-        return to_route('projects.index');
+        return to_route('admin.projects.index')->with('message', "Project $project->title deleted succesfully!");
     }
 }
