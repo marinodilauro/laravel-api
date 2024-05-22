@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use PhpParser\Node\Expr\PreDec;
 
@@ -36,9 +37,12 @@ class ProjectController extends Controller
 
         // validate
         $val_data = $request->validated();
-        $slug = Str::slug($request->title, '-');
 
+        $slug = Str::slug($request->title, '-');
         $val_data['slug'] = $slug;
+
+        $image_path = Storage::put('uploads', $val_data['thumb']);
+        $val_data['thumb'] = $image_path;
 
         // create
         // dd($val_data);
@@ -73,9 +77,12 @@ class ProjectController extends Controller
 
         // validate
         $val_data = $request->validated();
-        $slug = Str::slug($request->title, '-');
 
+        $slug = Str::slug($request->title, '-');
         $val_data['slug'] = $slug;
+
+        $image_path = Storage::put('uploads', $val_data['thumb']);
+        $val_data['thumb'] = $image_path;
 
         // create
         // dd($val_data);
