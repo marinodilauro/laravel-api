@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Portfolio Manager') }}</title>
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -29,9 +29,8 @@
   <body>
     <div id="app">
 
-
-      <nav class="navbar navbar-expand-md navbar-light shadow-sm">
-        <div class="container">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container p-0" style="max-width: 1600px;">
           <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
             <div class="logo_laravel">
               <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 150px">
@@ -85,7 +84,7 @@
                     <a class="dropdown-item" href="{{ url('profile') }}">{{ __('Profile') }}</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                 document.getElementById('logout-form').submit();">
                       {{ __('Logout') }}
                     </a>
 
@@ -100,6 +99,7 @@
           </div>
         </div>
       </nav>
+
 
       <main class="">
         @yield('content')

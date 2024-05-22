@@ -2,7 +2,7 @@
 
 @section('content')
   <header class="py-3 bg_dark text-white">
-    <div class="custom_container m-auto d-flex align-items-center justify-content-between">
+    <div class="custom_container d-flex align-items-center justify-content-between">
       <h1>Projects</h1>
       <a class="custom_btn btn_primary" href="{{ route('admin.projects.create') }}">
         <i class="fa-solid fa-plus fa-sm"></i>
@@ -12,14 +12,15 @@
   </header>
 
   <section class="py-5">
-    <div class="custom_container m-auto">
+    <div class="custom_container">
       <h4 class="text-muted">All projects</h4>
 
       @include('partials.action-confirmation')
 
-      <div class="table-responsive rounded shadow">
-        <table class="table table-striped table-dark table-hover">
-          <thead>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover m-0">
+
+          <thead class="table-dark">
             <tr>
               <th scope="col">ID</th>
               <th scope="col">THUMB</th>
@@ -31,10 +32,11 @@
               <th scope="col">ACTIONS</th>
             </tr>
           </thead>
+
           <tbody>
 
             @forelse ($projects as $project)
-              <tr class="">
+              <tr>
                 <td scope="row">{{ $project->id }}</td>
                 <td>
                   @if (Str::startsWith($project->thumb, 'https'))
@@ -117,20 +119,21 @@
 
                 </td>
 
-                </td>
               </tr>
             @empty
 
               <tr class="">
                 <td scope="row" colspan="6">No project yet!</td>
-
               </tr>
             @endforelse
 
           </tbody>
         </table>
-      </div>
 
+      </div>
+      {{ $projects->links('pagination::bootstrap-5') }}
     </div>
+
+
   </section>
 @endsection

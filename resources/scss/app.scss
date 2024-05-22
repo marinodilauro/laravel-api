@@ -12,10 +12,15 @@ nav {
 
 .custom_container {
   max-width: 1600px;
+  margin: auto;
 }
 
 .bg_dark {
   background-color: $color_dark;
+}
+
+.bg_light {
+  background-color: $color_light;
 }
 
 .custom_btn {
@@ -59,8 +64,45 @@ nav {
   }
 }
 
-.action {
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 0.8rem;
+.table-responsive {
+  border-radius: 9px;
+  filter: drop-shadow(0 0 0.75rem #3e3e3e);
+  margin-bottom: 1rem;
+
+  .action {
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+}
+
+// Pagination
+.page-link,
+.page-item {
+  color: $color_light;
+}
+
+.disabled>.page-link {
+  border-color: $color_light;
+}
+
+.active>.bg_primary {
+  background-color: $color_primary;
+  border: 1px solid #e9ecef;
+}
+
+.pagination {
+
+  span,
+  a {
+    width: 36px;
+    text-align: center;
+    aspect-ratio: 1;
+    padding: 6px 12px;
+    border: 1px solid #e9ecef;
+  }
+
+  a {
+    background-color: #3e3e3e;
+  }
 }

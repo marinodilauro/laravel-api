@@ -2,7 +2,7 @@
 
 @section('content')
   <header class="py-3 bg_dark text-white">
-    <div class="container d-flex align-items-center justify-content-between">
+    <div class="custom_container d-flex align-items-center justify-content-between">
 
       <h1>{{ $project->title }}</h1>
 

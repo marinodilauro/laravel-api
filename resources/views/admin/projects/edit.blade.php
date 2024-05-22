@@ -2,8 +2,16 @@
 
 @section('content')
   <header class="py-3 bg_dark text-white">
-    <div class="container">
+
+    <div class="custom_container d-flex align-items-center justify-content-between">
+
       <h1>Editing project: {{ $project->title }}</h1>
+
+      <a class="custom_btn btn_primary" href="{{ route('admin.projects.index') }}">
+        <i class="fa-solid fa-angle-left fa-sm"></i>
+        Back to projects
+      </a>
+
     </div>
   </header>
 
@@ -76,19 +84,10 @@
 
       </div>
 
-      <div class="buttons_container d-flex gap-3">
-
-        <button type="submit" class="border-0 custom_btn btn_primary">
-          <i class="fa-regular fa-floppy-disk fa-sm"></i>
-          Save
-        </button>
-
-        <a class="custom_btn btn_primary" href="{{ route('admin.projects.index') }}" title="Back">
-          <i class="fa-solid fa-angle-left fa-sm"></i>
-          Back to projects
-        </a>
-
-      </div>
+      <button type="submit" class="border-0 custom_btn btn_primary">
+        <i class="fa-regular fa-floppy-disk fa-sm"></i>
+        Save
+      </button>
 
     </form>
   </div>
