@@ -1,5 +1,66 @@
+@use './partials/variables' as *;
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  font: 400 16px/1.5 "Poppins", sans-serif;
+}
+
+main,
+nav {
+  background-color: $color_light;
+}
 
 .custom_container {
   max-width: 1600px;
+}
+
+.bg_dark {
+  background-color: $color_dark;
+}
+
+.custom_btn {
+  height: 45px;
+  padding: 0.7rem 1.4rem;
+  border-radius: 9px;
+  text-decoration: none;
+}
+
+.btn_primary {
+  background-color: $color_primary;
+  border-color: $color_primary;
+  color: white;
+
+  &:focus,
+  &:hover {
+    background-color: $color_primary_hover;
+    border-color: $color_primary_hover;
+  }
+
+  &:active {
+    background-color: $color_primary_active;
+    border-color: $color_primary_active;
+  }
+}
+
+.btn_red {
+  background-color: $color_danger;
+  border-color: $color_danger;
+  color: white;
+
+  &:focus,
+  &:hover {
+    background-color: $color_danger_hover;
+    border-color: $color_danger_hover;
+  }
+
+  &:active {
+    background-color: $color_danger_active;
+    border-color: $color_danger_active;
+  }
+}
+
+.action {
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.8rem;
 }

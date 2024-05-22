@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-  <header class="py-3 bg-dark text-white">
+  <header class="py-3 bg_dark text-white">
     <div class="container">
       <h1>Adding new project</h1>
     </div>
@@ -74,13 +74,13 @@
 
       </div>
 
-      <div class="buttons_container">
+      <div class="buttons_container d-flex gap-3">
 
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="custom_btn btn_primary border-0">
           Create
         </button>
 
-        <a class="btn btn-primary ms-3" href="{{ route('admin.projects.index') }}" title="Back">
+        <a class="custom_btn btn_primary ms-3" href="{{ route('admin.projects.index') }}" title="Back">
           <i class="fa-solid fa-angle-left fa-sm"></i>
           Back to projects
         </a>

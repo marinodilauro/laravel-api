@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-  <header class="py-3 bg-dark text-white">
+  <header class="py-3 bg_dark text-white">
     <div class="custom_container m-auto d-flex align-items-center justify-content-between">
       <h1>Projects</h1>
-      <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">
-        <i class="fa fa-pencil" aria-hidden="true"></i>
+      <a class="custom_btn btn_primary" href="{{ route('admin.projects.create') }}">
+        <i class="fa-solid fa-plus fa-sm"></i>
         Add new project
       </a>
     </div>
@@ -17,8 +17,8 @@
 
       @include('partials.action-confirmation')
 
-      <div class="table-responsive">
-        <table class="table table-light table-hover">
+      <div class="table-responsive rounded shadow">
+        <table class="table table-striped table-dark table-hover">
           <thead>
             <tr>
               <th scope="col">ID</th>
@@ -50,22 +50,26 @@
                 <td class="text-truncate" style="max-width:1px">{{ $project->repo_link }}</td>
                 <td>
                   {{-- View action --}}
-                  <a class="btn btn-primary badge p-1" href="{{ route('admin.projects.show', $project) }}"
-                    title="View">
-                    View
-                    <i class="fa-solid fa-eye fa-sm"></i>
-                  </a>
+                  <button type="button" class="action btn_primary  p-1">
+                    <a class="text-decoration-none text-white" href="{{ route('admin.projects.show', $project) }}"
+                      title="View">
+                      View
+                      <i class="fa-solid fa-eye fa-sm"></i>
+                    </a>
+                  </button>
 
                   {{-- Edit action --}}
-                  <a class="btn btn-primary badge p-1" href="{{ route('admin.projects.edit', $project) }}"
-                    title="Edit">
-                    Edit
-                    <i class="fa-solid fa-pencil fa-sm"></i>
-                  </a>
+                  <button class="action btn_primary p-1">
+                    <a class="text-decoration-none text-white" href="{{ route('admin.projects.edit', $project) }}"
+                      title="Edit">
+                      Edit
+                      <i class="fa-solid fa-pencil fa-sm"></i>
+                    </a>
+                  </button>
 
                   {{-- Delete action --}}
                   <!-- Modal trigger button -->
-                  <button type="button" class="btn badge btn-danger p-1" data-bs-toggle="modal"
+                  <button type="button" class="action btn_red p-1" data-bs-toggle="modal"
                     data-bs-target="#modalId-{{ $project->id }}" title="Delete">
                     Delete
                     <i class="fa-solid fa-trash-can fa-sm"></i>
@@ -101,7 +105,7 @@
                           <form action="{{ route('admin.projects.destroy', $project) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">
+                            <button type="submit" class="custom_btn btn_red">
                               Confirm
                             </button>
                           </form>
