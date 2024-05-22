@@ -74,10 +74,18 @@
 
       </div>
 
-      <button type="submit" class="btn btn-primary">
-        Create
-      </button>
+      <div class="buttons_container">
 
+        <button type="submit" class="btn btn-primary">
+          Create
+        </button>
+
+        <a class="btn btn-primary ms-3" href="{{ route('admin.projects.index') }}" title="Back">
+          <i class="fa-solid fa-angle-left fa-sm"></i>
+          Back to projects
+        </a>
+
+      </div>
 
     </form>
   </div>
