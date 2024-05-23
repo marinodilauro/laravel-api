@@ -18,6 +18,7 @@
   <div class="container py-5">
 
     @include('partials.validation-errors')
+    @include('partials.action-confirmation')
 
     <form action="{{ route('admin.projects.update', $project) }}" method="post" enctype="multipart/form-data">
       @csrf
@@ -33,6 +34,20 @@
           <div class="text-danger">{{ $message }}</div>
         @enderror
 
+      </div>
+
+      <div class="mb-3">
+        <label for="type_id" class="form-label">Type</label>
+        <select class="form-select" name="type_id" id="type_id">
+          <option selected disabled>Select a type for the project</option>
+
+          @foreach ($types as $type)
+            <option value="{{ $type->id }}" {{ $type->id == old('type_id', $project->type_id) ? 'selected' : '' }}>
+              {{ $type->name }}
+            </option>
+          @endforeach
+
+        </select>
       </div>
 
       <div class="mb-3">

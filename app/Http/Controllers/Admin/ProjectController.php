@@ -69,7 +69,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**
@@ -86,6 +87,7 @@ class ProjectController extends Controller
         $slug = Str::slug($request->title, '-');
         $val_data['slug'] = $slug;
 
+        // dd($val_data);
         if ($request->has('thumb')) {
 
             if ($project->thumb) {
@@ -97,11 +99,10 @@ class ProjectController extends Controller
         }
 
         // create
-        // dd($val_data);
         $project->update($val_data);
 
         // redirect
-        return to_route('admin.projects.index')->with('message', "Project $project->title updated succesfully!");
+        return to_route('admin.projects.edit', $project)->with('message', "Project $project->title updated succesfully!");
     }
 
     /**

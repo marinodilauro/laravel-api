@@ -17,7 +17,7 @@ class Project extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user(): BelongsTo
+    public function type(): BelongsTo
     {
         return $this->belongsTo(Type::class);
     }

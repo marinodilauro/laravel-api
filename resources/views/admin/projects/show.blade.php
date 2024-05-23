@@ -34,10 +34,15 @@
           <a href="">{{ $project->project_link }}</a>
         </div>
 
-        <div>
+        <div class="mb-3">
           <span><strong>Repository link:</strong></span>
           <a href="">{{ $project->repo_link }}</a>
         </div>
+
+        <div class="metadata">
+          <strong>Type: </strong> {{ $project->type ? $project->type->name : 'No type has been chosen yet' }}
+        </div>
+
       </div>
 
     </div>

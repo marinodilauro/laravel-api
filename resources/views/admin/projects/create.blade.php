@@ -35,8 +35,8 @@
 
       <div class="mb-3">
         <label for="type_id" class="form-label">Type</label>
-        <select class="form-select form-select" name="type_id" id="type_id">
-          <option selected disabled>Select one</option>
+        <select class="form-select" name="type_id" id="type_id">
+          <option selected disabled>Select a type for the project</option>
 
           @foreach ($types as $type)
             <option value="{{ $type->id }}" {{ $type->id == old('type_id') ? 'selected' : '' }}>
