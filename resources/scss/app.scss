@@ -66,8 +66,8 @@ nav {
 
 .table-responsive {
   border-radius: 9px;
-  filter: drop-shadow(0 0 0.75rem #3e3e3e);
-  margin-bottom: 1rem;
+  box-shadow: 0 0 1.5rem 0.2px #3e3e3e;
+  margin-bottom: 2rem;
 
   .action {
     border-radius: 5px;
