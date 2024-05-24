@@ -11,4 +11,9 @@ class DashboardController extends Controller
     {
         return view('/dashboard');
     }
+
+    public function homepage()
+    {
+        return view('admin/welcome');
+    }
 }

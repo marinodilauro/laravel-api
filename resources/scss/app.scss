@@ -1,6 +1,7 @@
 @use './partials/variables' as *;
 @import '~bootstrap/scss/bootstrap';
 
+/* #region :::: UTILITIES :::: */
 body {
   font: 400 16px/1.5 "Poppins", sans-serif;
 }
@@ -103,7 +104,9 @@ nav {
   background-color: $color_backend_badge;
 }
 
-// Pagination
+/* #endregion :::: UTILITIES :::: */
+
+/* #region :::: PAGINATION :::: */
 .page-link,
 .page-item {
   color: $color_light;
@@ -133,3 +136,13 @@ nav {
     background-color: #3e3e3e;
   }
 }
+
+/* #endregion :::: PAGINATION :::: */
+
+
+/* #region :::: DASHBOARD :::: */
+
+
+
+
+/* #endregion :::: DASHBOARD :::: */

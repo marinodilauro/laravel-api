@@ -21,6 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::middleware(['auth', 'verified'])
     ->name('admin.')
     ->prefix('admin')
@@ -29,6 +31,7 @@ Route::middleware(['auth', 'verified'])
         // All routes needs to share a common name and prefix and the middleware
 
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/welcome', [DashboardController::class, 'homepage'])->name('welcome');
         Route::resource('/projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
         Route::resource('/types', TypeController::class)->parameters(['types' => 'type:slug']);
     });

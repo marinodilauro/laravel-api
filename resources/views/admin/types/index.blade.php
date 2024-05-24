@@ -86,7 +86,7 @@
                         </div>
 
                         <div class="modal-body text-center">
-                          You are about to delete "{{ $type->title }}"
+                          You are about to delete "{{ $type->name }}"
                           <br>
                           Are you sure you want to delete this type?
                         </div>
