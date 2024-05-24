@@ -3,10 +3,10 @@
 @section('content')
   <header class="py-3 bg_dark text-white">
     <div class="custom_container d-flex align-items-center justify-content-between">
-      <h1>Types</h1>
+      <h1>Project types</h1>
       <a class="custom_btn btn_primary" href="{{ route('admin.types.create') }}">
         <i class="fa-solid fa-plus fa-sm"></i>
-        Add new type
+        Add new project type
       </a>
     </div>
   </header>
