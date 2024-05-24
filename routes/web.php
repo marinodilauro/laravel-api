@@ -28,7 +28,7 @@ Route::middleware(['auth', 'verified'])
         // All routes needs to share a common name and prefix and the middleware
 
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
+        Route::resource('/projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
     });
 
 Route::middleware('auth')->group(function () {
