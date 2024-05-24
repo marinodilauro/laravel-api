@@ -38,7 +38,7 @@
                 <td scope="row">{{ $type->id }}</td>
                 <td>{{ $type->name }}</td>
                 <td>{{ $type->slug }}</td>
-                <td>{{ $type->description }}</td>
+                <td width="40%">{{ $type->description }}</td>
                 <td>
                   <div class="type {{ $type->slug }}">{{ $type->name }} </div>
                 </td>
