@@ -49,7 +49,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
+                <a class="nav-link" href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }}</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.projects.index') }}">{{ __('Projects') }}</a>

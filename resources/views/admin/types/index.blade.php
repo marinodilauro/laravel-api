@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-  <header class="py-3 bg_dark text-white">
+  <!-- Dashboard top -->
+
+  <div class="py-3 bg_dark text-white">
     <div class="custom_container d-flex align-items-center justify-content-between">
       <h1>Project types</h1>
       <a class="custom_btn btn_primary" href="{{ route('admin.types.create') }}">
@@ -9,14 +11,41 @@
         Add new project type
       </a>
     </div>
-  </header>
+  </div>
 
-  <section class="py-5">
-    <div class="custom_container">
-      <h4 class="text-muted">All types</h4>
+  <div class="dashboard_container d-flex">
 
-      @include('partials.action-confirmation')
+    <!-- Sidebar -->
 
+    <div class="sidebar bg_dark text-white d-flex flex-column justify-content-start align-items-center p-2">
+
+      <ul class="m-0 list-unstyled">
+        <li class="pb-2">
+          <a class="d-flex align-items-center gap-2 p-1" href="{{ route('admin.dashboard') }}">
+            <i class="fa-solid fa-house fa-xs mb-1"></i>
+            <span class="d-none d-lg-inline">Home</span>
+          </a>
+        </li>
+        <li class="pb-2">
+          <a class="d-flex align-items-baseline gap-2 p-1" href="{{ route('admin.projects.index') }}">
+            <i class="fa-solid fa-chart-simple fa-xs pe-1">
+
+            </i><span class="d-none d-lg-inline">Projects</span>
+          </a>
+        </li>
+        <li class="pb-2">
+          <a class="d-flex align-items-baseline gap-2 p-1" href="{{ route('admin.types.index') }}">
+            <i class="fa-solid fa-signal fa-xs"></i>
+            <span class="d-none d-lg-inline">Types</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Dashboard -->
+
+    <div class="dashboard bg_light p-4">
+
+      <!-- Types table -->
       <div class="table-responsive">
         <table class="table table-striped table-hover m-0">
 
@@ -48,7 +77,7 @@
                     <a class="text-decoration-none text-white" href="{{ route('admin.types.show', $type) }}"
                       title="View">
                       View
-                      <i class="fa-solid fa-eye fa-sm"></i>
+                      <i class="fa-solid fa-eye fa-sm ms-1"></i>
                     </a>
                   </button>
 
@@ -57,7 +86,7 @@
                     <a class="text-decoration-none text-white" href="{{ route('admin.types.edit', $type) }}"
                       title="Edit">
                       Edit
-                      <i class="fa-solid fa-pencil fa-sm"></i>
+                      <i class="fa-solid fa-pencil fa-sm ms-1"></i>
                     </a>
                   </button>
 
@@ -66,7 +95,7 @@
                   <button type="button" class="action btn_red p-1" data-bs-toggle="modal"
                     data-bs-target="#modalId-{{ $type->id }}" title="Delete">
                     Delete
-                    <i class="fa-solid fa-trash-can fa-sm"></i>
+                    <i class="fa-solid fa-trash-can fa-sm ms-1"></i>
                   </button>
 
                   <!-- Modal Body -->
@@ -124,8 +153,14 @@
 
       </div>
       {{ $types->links('pagination::bootstrap-5') }}
+
     </div>
 
+  </div>
 
-  </section>
+  </div>
 @endsection
+
+@push('styles')
+  <link rel="stylesheet" href="{{ asset('resources/scss/partials/_welcome.scss') }}">
+@endpush
