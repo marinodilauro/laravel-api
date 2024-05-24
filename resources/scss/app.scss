@@ -142,7 +142,26 @@ nav {
 
 /* #region :::: DASHBOARD :::: */
 
+.dashboard_container {
+  height: calc(100vh - (85px + 88px));
+  overflow-y: hidden;
 
+  .sidebar {
+    max-width: 150px;
+    min-width: 60px;
+    flex-shrink: 0;
+
+    a {
+      text-decoration: none;
+      color: var(--db-font_light);
+
+      &:hover {
+        background-color: $color_primary;
+        border-radius: 4px;
+      }
+    }
+  }
+}
 
 
 /* #endregion :::: DASHBOARD :::: */

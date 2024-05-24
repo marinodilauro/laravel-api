@@ -24,12 +24,13 @@
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
+    @stack('styles')
   </head>
 
   <body>
     <div id="app">
 
-      <nav class="navbar navbar-expand-md navbar-light">
+      <nav class="navbar navbar-expand-md navbar-light p-0">
         <div class="container p-0" style="max-width: 1600px;">
           <a class="navbar-brand d-flex align-items-center" href="{{ route('admin.welcome') }}">
             <div class="logo d-flex align-items-center gap-3">
@@ -48,7 +49,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('admin') }}">{{ __('Admin') }}</a>
+                <a class="nav-link" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.projects.index') }}">{{ __('Projects') }}</a>
@@ -78,7 +79,6 @@
                   </a>
 
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
                     <a class="dropdown-item" href="{{ url('profile') }}">{{ __('Profile') }}</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                       onclick="event.preventDefault();
