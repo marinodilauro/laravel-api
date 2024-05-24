@@ -26,10 +26,10 @@
               <th scope="col">THUMB</th>
               <th scope="col">TITLE</th>
               <th scope="col">SLUG</th>
-              <th scope="col">TYPE</th>
               <th scope="col">DESCRIPTION</th>
               <th scope="col">PROJECT LINK</th>
               <th scope="col">REPO LINK</th>
+              <th scope="col">TYPE</th>
               <th scope="col">ACTIONS</th>
             </tr>
           </thead>
@@ -48,10 +48,17 @@
                 </td>
                 <td width="10%">{{ $project->title }}</td>
                 <td width="10%">{{ $project->slug }}</td>
-                <td width="10%">{{ $project->type ? $project->type->name : 'No type has been chosen yet' }}</td>
-                <td width="35%">{{ $project->description }}</td>
+                <td width="30%">{{ $project->description }}</td>
                 <td class="text-truncate" style="max-width:1px">{{ $project->project_link }}</td>
                 <td class="text-truncate" style="max-width:1px">{{ $project->repo_link }}</td>
+                <td width="10%">
+                  @if ($project->type)
+                    <div class="type {{ $project->type->slug }}">{{ $project->type->name }} </div>
+                  @else
+                    No type has been chosen yet
+                  @endif
+
+                </td>
                 <td>
                   {{-- View action --}}
                   <button type="button" class="action btn_primary  p-1">

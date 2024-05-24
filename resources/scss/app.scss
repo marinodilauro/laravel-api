@@ -69,6 +69,32 @@ nav {
   box-shadow: 0 0 1.5rem 0.2px #3e3e3e;
   margin-bottom: 2rem;
 
+  .type {
+    color: $color_light;
+    height: 30px;
+    width: 90px;
+    padding: 10px;
+    border: 1px solid $color_light;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    line-height: 10px;
+  }
+
+  .fullstack {
+    background-color: $color_fullstack_badge;
+  }
+
+  .front-end {
+    background-color: $color_frontend_badge;
+  }
+
+  .back-end {
+    background-color: $color_backend_badge;
+  }
+
   .action {
     border-radius: 5px;
     font-weight: bold;
