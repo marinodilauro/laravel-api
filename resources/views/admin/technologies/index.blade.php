@@ -5,10 +5,10 @@
 
   <div class="py-3 bg_dark text-white">
     <div class="custom_container d-flex align-items-center justify-content-between">
-      <h1>Project types</h1>
-      <a class="custom_btn btn_primary" href="{{ route('admin.types.create') }}">
+      <h1>Programming languages and frameworks </h1>
+      <a class="custom_btn btn_primary" href="{{ route('admin.technologies.create') }}">
         <i class="fa-solid fa-plus fa-sm"></i>
-        Add new project type
+        Add new technology
       </a>
     </div>
   </div>
@@ -21,7 +21,7 @@
 
     <!-- Dashboard -->
 
-    <div class="dashboard bg_light p-4">
+    <div class="dashboard flex-fill bg_light p-4">
 
       <!-- Types table -->
       <div class="table-responsive">
@@ -32,7 +32,6 @@
               <th scope="col">ID</th>
               <th scope="col">NAME</th>
               <th scope="col">SLUG</th>
-              <th scope="col">DESCRIPTION</th>
               <th scope="col">PREVIEW</th>
               <th scope="col">ACTIONS</th>
             </tr>
@@ -40,19 +39,18 @@
 
           <tbody>
 
-            @forelse ($types as $type)
+            @forelse ($technologies as $technology)
               <tr>
-                <td scope="row">{{ $type->id }}</td>
-                <td>{{ $type->name }}</td>
-                <td>{{ $type->slug }}</td>
-                <td width="40%">{{ $type->description }}</td>
+                <td scope="row">{{ $technology->id }}</td>
+                <td>{{ $technology->name }}</td>
+                <td>{{ $technology->slug }}</td>
                 <td>
-                  <div class="type {{ $type->slug }}">{{ $type->name }} </div>
+                  <div class="tag small {{ $technology->slug }}">{{ $technology->name }} </div>
                 </td>
                 <td>
                   {{-- View action --}}
                   <button type="button" class="action btn_primary p-1">
-                    <a class="text-decoration-none text-white" href="{{ route('admin.types.show', $type) }}"
+                    <a class="text-decoration-none text-white" href="{{ route('admin.technologies.show', $technology) }}"
                       title="View">
                       View
                       <i class="fa-solid fa-eye fa-sm ms-1"></i>
@@ -61,7 +59,7 @@
 
                   {{-- Edit action --}}
                   <button class="action btn_primary p-1">
-                    <a class="text-decoration-none text-white" href="{{ route('admin.types.edit', $type) }}"
+                    <a class="text-decoration-none text-white" href="{{ route('admin.technologies.edit', $technology) }}"
                       title="Edit">
                       Edit
                       <i class="fa-solid fa-pencil fa-sm ms-1"></i>
@@ -71,15 +69,15 @@
                   {{-- Delete action --}}
                   <!-- Modal trigger button -->
                   <button type="button" class="action btn_red p-1" data-bs-toggle="modal"
-                    data-bs-target="#modalId-{{ $type->id }}" title="Delete">
+                    data-bs-target="#modalId-{{ $technology->id }}" title="Delete">
                     Delete
                     <i class="fa-solid fa-trash-can fa-sm ms-1"></i>
                   </button>
 
                   <!-- Modal Body -->
                   <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-                  <div class="modal fade" id="modalId-{{ $type->id }}" tabindex="-1" data-bs-backdrop="static"
-                    data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId-{{ $type->id }}"
+                  <div class="modal fade" id="modalId-{{ $technology->id }}" tabindex="-1" data-bs-backdrop="static"
+                    data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId-{{ $technology->id }}"
                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
                       <div class="modal-content">
@@ -93,9 +91,9 @@
                         </div>
 
                         <div class="modal-body text-center">
-                          You are about to delete "{{ $type->name }}"
+                          You are about to delete "{{ $technology->name }}"
                           <br>
-                          Are you sure you want to delete this type?
+                          Are you sure you want to delete this technology?
                         </div>
 
                         <div class="d-flex justify-content-end gap-3 p-3">
@@ -103,7 +101,7 @@
                             Close
                           </button>
 
-                          <form action="{{ route('admin.types.destroy', $type) }}" method="post">
+                          <form action="{{ route('admin.technologies.destroy', $technology) }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn_red">
@@ -130,7 +128,7 @@
         </table>
 
       </div>
-      {{ $types->links('pagination::bootstrap-5') }}
+      {{ $technologies->links('pagination::bootstrap-5') }}
 
     </div>
 

@@ -30,8 +30,8 @@
   <body>
     <div id="app">
 
-      <nav class="navbar navbar-expand-md navbar-light p-0">
-        <div class="container p-0" style="max-width: 1600px;">
+      <nav class="bg_dark navbar navbar-expand-md navbar-dark p-0">
+        <div class="container-fluid px-2">
           <a class="navbar-brand d-flex align-items-center" href="{{ route('admin.welcome') }}">
             <div class="logo d-flex align-items-center gap-3">
               <img width="75" src="{{ asset('storage/Avatar.jpg') }}" class="rounded-circle">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Technology;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -15,7 +16,8 @@ class DashboardController extends Controller
             '/admin.dashboard',
             [
                 'projects' => Project::orderByDesc('id')->get(),
-                'types' => Type::orderBy('id')->get()
+                'types' => Type::orderBy('id')->get(),
+                'technologies' => Technology::orderBy('id')->get()
             ]
         );
     }

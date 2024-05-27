@@ -108,8 +108,9 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 500;
+  display: inline-block;
 
   &.small {
     padding: 0px 8px;
@@ -133,7 +134,7 @@ nav {
   border-color: #FFCFD2;
 }
 
-.c_sharp {
+.c-sharp {
   background-color: #F1C0E8;
   border-color: #F1C0E8;
 }
@@ -163,7 +164,7 @@ nav {
   border-color: #98F5E1;
 }
 
-.machine_learning {
+.machine-learning {
   background-color: #B9FBC0;
   border-color: #B9FBC0;
 }
@@ -221,7 +222,13 @@ nav {
       padding: 4px;
     }
   }
+
+  &.technologies_table {
+    max-height: 527px;
+  }
 }
+
+
 
 /* #endregion :::: TABLE :::: */
 
@@ -263,7 +270,7 @@ nav {
 /* #region :::: DASHBOARD :::: */
 
 .dashboard_container {
-  height: calc(100vh - (85px + 88px));
+  height: calc(100vh - (85px));
   overflow-y: hidden;
 
   .sidebar {
