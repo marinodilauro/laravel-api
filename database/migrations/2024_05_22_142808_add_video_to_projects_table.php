@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->string('video', 255)->after('repo_link');
+            $table->string('video', 255)->nullable()->after('repo_link');
         });
     }
 

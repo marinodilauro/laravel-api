@@ -100,10 +100,10 @@
 
                 {{-- Tags --}}
                 <td width="10%">
-                  @if (count($project->tags) > 0)
+                  @if (count($project->technologies) > 0)
                     <div class="d-flex gap-1 flex-wrap">
-                      @foreach ($project->tags as $tag)
-                        <div class="tag small {{ $tag->slug }}">{{ $tag->name }} </div>
+                      @foreach ($project->technologies as $technology)
+                        <div class="tag small {{ $technology->slug }}">{{ $technology->name }} </div>
                       @endforeach
                     </div>
                   @else

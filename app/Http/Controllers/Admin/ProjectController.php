@@ -52,7 +52,7 @@ class ProjectController extends Controller
 
         // Create
 
-        // dd($val_data);
+        // dd($request->all(), $val_data);
         $project = Project::create($val_data);
 
         if ($request->has('technologies')) {

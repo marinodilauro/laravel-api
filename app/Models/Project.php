@@ -11,7 +11,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $guarded;
+    protected $fillable = ['title', 'slug', 'thumb', 'project_link', 'repo_link', 'description', 'video', 'type_id'];
 
     /**
      * Get the type of the project
