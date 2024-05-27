@@ -125,12 +125,18 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        // Deleting images from assets
         if ($project->thumb) {
             Storage::delete($project->thumb);
         }
 
+        // Detaching technologies from project
+        $project->technologies()->detach();
+
+        // Deleting projects
         $project->delete();
 
+        // Redirect
         return to_route('admin.projects.index')->with('message', "Project $project->title deleted succesfully!");
     }
 }
