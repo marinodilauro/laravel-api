@@ -99,66 +99,77 @@ nav {
 /* #region ::: TAGS ::: */
 
 .tag {
-  color: #fefefe;
-  height: 30px;
-  width: 75px;
-  padding: 10px;
-  border: 1px solid #fefefe;
+  color: $color_dark;
+  border: 1px solid;
+  padding: 0px 8px;
+  line-height: 16px;
   background-color: #2e2e2e;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.65rem;
+  font-size: 0.55rem;
   font-weight: 500;
 }
 
 .html {
-  background-color: $color_fullstack_badge;
+  background-color: #FBF8CC;
+  border-color: #FBF8CC;
 }
 
 .css {
-  background-color: $color_frontend_badge;
+  background-color: #FDE4CF;
+  border-color: #FDE4CF;
 }
 
 .php {
-  background-color: $color_backend_badge;
+  background-color: #FFCFD2;
+  border-color: #FFCFD2;
 }
 
 .c_sharp {
-  background-color: $color_fullstack_badge;
+  background-color: #F1C0E8;
+  border-color: #F1C0E8;
 }
 
 .vuejs {
-  background-color: $color_frontend_badge;
+  background-color: #CFBAF0;
+  border-color: #CFBAF0;
 }
 
 .javascript {
-  background-color: $color_backend_badge;
+  background-color: #A3C4F3;
+  border-color: #A3C4F3;
 }
 
 .laravel {
-  background-color: $color_frontend_badge;
+  background-color: #90DBF4;
+  border-color: #90DBF4;
 }
 
 .vite {
-  background-color: $color_backend_badge;
+  background-color: #8EECF5;
+  border-color: #8EECF5;
 }
 
 .ai {
-  background-color: $color_fullstack_badge;
+  background-color: #98F5E1;
+  border-color: #98F5E1;
 }
 
 .machine_learning {
-  background-color: $color_frontend_badge;
+  background-color: #B9FBC0;
+  border-color: #B9FBC0;
 }
 
 .game {
-  background-color: $color_backend_badge;
+  background-color: #e9ff70;
+  border-color: #e9ff70;
 }
 
 .unity {
-  background-color: $color_backend_badge;
+  background-color: #70d6ff;
+  border-color: #70d6ff;
 }
 
 /* #endregion ::: TAGS ::: */

@@ -60,6 +60,7 @@
               <th scope="col">DESCRIPTION</th>
               <th scope="col">PROJECT LINK</th>
               <th scope="col">REPO LINK</th>
+              <th scope="col">TAGS</th>
               <th scope="col">TYPE</th>
               <th scope="col">ACTIONS</th>
             </tr>
@@ -69,7 +70,11 @@
 
             @forelse ($projects as $project)
               <tr>
+
+                {{-- ID --}}
                 <td scope="row">{{ $project->id }}</td>
+
+                {{-- Thumbnail --}}
                 <td>
                   @if (Str::startsWith($project->thumb, 'https'))
                     <img width="100" src="{{ $project->thumb }}" alt="{{ $project->title }}">
@@ -77,44 +82,67 @@
                     <img width="100" src="{{ asset('storage/' . $project->thumb) }}" alt="{{ $project->title }}">
                   @endif
                 </td>
-                <td width="10%">{{ $project->title }}</td>
-                <td width="10%">{{ $project->slug }}</td>
-                <td width="30%">{{ $project->description }}</td>
+
+                {{-- Title --}}
+                <td width="8%">{{ $project->title }}</td>
+
+                {{-- Slug --}}
+                <td width="8%">{{ $project->slug }}</td>
+
+                {{-- Description --}}
+                <td width="20%" class="text-truncate" style="max-width:1px">{{ $project->description }}</td>
+
+                {{-- Project link --}}
                 <td class="text-truncate" style="max-width:1px">{{ $project->project_link }}</td>
+
+                {{-- Repository link --}}
                 <td class="text-truncate" style="max-width:1px">{{ $project->repo_link }}</td>
+
+                {{-- Tags --}}
+                <td width="10%">
+                  @if (count($project->tags) > 0)
+                    @foreach ($project->tags as $tag)
+                      <div class="tag {{ $tag->slug }}">{{ $tag->name }} </div>
+                    @endforeach
+                  @else
+                    No tag has been added yet
+                  @endif
+
+                </td>
+
+                {{-- Project type --}}
                 <td width="10%">
                   @if ($project->type)
                     <div class="type {{ $project->type->slug }}">{{ $project->type->name }} </div>
                   @else
-                    No type has been chosen yet
+                    No type has been added yet
                   @endif
 
                 </td>
+
+                {{-- Actions --}}
                 <td>
                   {{-- View action --}}
-                  <button type="button" class="action btn_primary p-1">
+                  <button type="button" class="action_small btn_primary">
                     <a class="text-decoration-none text-white" href="{{ route('admin.projects.show', $project) }}"
                       title="View">
-                      View
-                      <i class="fa-solid fa-eye fa-sm ms-1"></i>
+                      <i class="fa-solid fa-eye fa-sm"></i>
                     </a>
                   </button>
 
                   {{-- Edit action --}}
-                  <button class="action btn_primary p-1">
+                  <button class="action_small btn_primary">
                     <a class="text-decoration-none text-white" href="{{ route('admin.projects.edit', $project) }}"
                       title="Edit">
-                      Edit
-                      <i class="fa-solid fa-pencil fa-sm ms-1"></i>
+                      <i class="fa-solid fa-pencil fa-sm"></i>
                     </a>
                   </button>
 
                   {{-- Delete action --}}
                   <!-- Modal trigger button -->
-                  <button type="button" class="action btn_red p-1" data-bs-toggle="modal"
+                  <button type="button" class="action_small btn_red" data-bs-toggle="modal"
                     data-bs-target="#modalId-{{ $project->id }}" title="Delete">
-                    Delete
-                    <i class="fa-solid fa-trash-can fa-sm ms-1"></i>
+                    <i class="fa-solid fa-trash-can fa-sm"></i>
                   </button>
 
                   <!-- Modal Body -->

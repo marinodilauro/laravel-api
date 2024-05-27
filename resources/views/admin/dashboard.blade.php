@@ -51,7 +51,6 @@
               <thead class="table-dark">
                 <tr>
                   <th scope="col">ID</th>
-                  <th scope="col">THUMB</th>
                   <th scope="col">TITLE</th>
                   <th scope="col">SLUG</th>
                   <th scope="col">DESCRIPTION</th>
@@ -71,15 +70,6 @@
                     {{-- ID --}}
                     <td scope="row">{{ $project->id }}</td>
 
-                    {{-- Thumbnail --}}
-                    <td>
-                      @if (Str::startsWith($project->thumb, 'https'))
-                        <img width="100" src="{{ $project->thumb }}" alt="{{ $project->title }}">
-                      @else
-                        <img width="100" src="{{ asset('storage/' . $project->thumb) }}" alt="{{ $project->title }}">
-                      @endif
-                    </td>
-
                     {{-- Title --}}
                     <td width="8%">{{ $project->title }}</td>
 
@@ -98,9 +88,11 @@
                     {{-- Tags --}}
                     <td width="10%">
                       @if (count($project->tags) > 0)
-                        @foreach ($project->tags as $tag)
-                          <div class="tag {{ $tag->slug }}">{{ $tag->name }} </div>
-                        @endforeach
+                        <div class="d-flex gap-1 flex-wrap">
+                          @foreach ($project->tags as $tag)
+                            <div class="tag {{ $tag->slug }}">{{ $tag->name }} </div>
+                          @endforeach
+                        </div>
                       @else
                         No tag has been added yet
                       @endif
