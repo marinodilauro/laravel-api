@@ -43,7 +43,7 @@
 
     <!-- Dashboard -->
 
-    <div class="dashboard bg_light p-4">
+    <div class="dashboard flex-fill bg_light p-4">
 
       @include('partials.action-confirmation')
 
@@ -75,7 +75,7 @@
                 <td scope="row">{{ $project->id }}</td>
 
                 {{-- Thumbnail --}}
-                <td>
+                <td width="8%">
                   @if (Str::startsWith($project->thumb, 'https'))
                     <img width="100" src="{{ $project->thumb }}" alt="{{ $project->title }}">
                   @else
@@ -101,9 +101,11 @@
                 {{-- Tags --}}
                 <td width="10%">
                   @if (count($project->tags) > 0)
-                    @foreach ($project->tags as $tag)
-                      <div class="tag {{ $tag->slug }}">{{ $tag->name }} </div>
-                    @endforeach
+                    <div class="d-flex gap-1 flex-wrap">
+                      @foreach ($project->tags as $tag)
+                        <div class="tag small {{ $tag->slug }}">{{ $tag->name }} </div>
+                      @endforeach
+                    </div>
                   @else
                     No tag has been added yet
                   @endif
@@ -123,26 +125,29 @@
                 {{-- Actions --}}
                 <td>
                   {{-- View action --}}
-                  <button type="button" class="action_small btn_primary">
+                  <button type="button" class="action btn_primary me-1">
                     <a class="text-decoration-none text-white" href="{{ route('admin.projects.show', $project) }}"
                       title="View">
-                      <i class="fa-solid fa-eye fa-sm"></i>
+                      View
+                      <i class="fa-solid fa-eye fa-sm ms-1"></i>
                     </a>
                   </button>
 
                   {{-- Edit action --}}
-                  <button class="action_small btn_primary">
+                  <button type="button" class="action btn_primary me-1">
                     <a class="text-decoration-none text-white" href="{{ route('admin.projects.edit', $project) }}"
                       title="Edit">
-                      <i class="fa-solid fa-pencil fa-sm"></i>
+                      Edit
+                      <i class="fa-solid fa-pencil fa-sm ms-1"></i>
                     </a>
                   </button>
 
                   {{-- Delete action --}}
                   <!-- Modal trigger button -->
-                  <button type="button" class="action_small btn_red" data-bs-toggle="modal"
+                  <button type="button" class="action btn_red" data-bs-toggle="modal"
                     data-bs-target="#modalId-{{ $project->id }}" title="Delete">
-                    <i class="fa-solid fa-trash-can fa-sm"></i>
+                    Delete
+                    <i class="fa-solid fa-trash-can fa-sm ms-1"></i>
                   </button>
 
                   <!-- Modal Body -->

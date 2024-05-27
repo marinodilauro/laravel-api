@@ -40,7 +40,22 @@
         </div>
 
         <div class="metadata">
-          <strong>Type: </strong> {{ $project->type ? $project->type->name : 'No type has been chosen yet' }}
+          <div class="mb-3">
+            <strong>Type: </strong> {{ $project->type ? $project->type->name : 'No type has been chosen yet' }}
+          </div>
+
+          <div>
+            <strong>Technologies used in this project: </strong>
+            @if (count($project->tags) > 0)
+              <div class="d-flex gap-1 flex-wrap mt-2">
+                @foreach ($project->tags as $tag)
+                  <div class="tag {{ $tag->slug }}">{{ $tag->name }} </div>
+                @endforeach
+              </div>
+            @else
+              No tag has been added yet
+            @endif
+          </div>
         </div>
 
       </div>

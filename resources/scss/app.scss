@@ -101,15 +101,21 @@ nav {
 .tag {
   color: $color_dark;
   border: 1px solid;
-  padding: 0px 8px;
+  padding: 2px 10px;
   line-height: 16px;
   background-color: #2e2e2e;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.55rem;
+  font-size: 0.8rem;
   font-weight: 500;
+
+  &.small {
+    padding: 0px 8px;
+    line-height: 16px;
+    font-size: 0.55rem;
+  }
 }
 
 .html {
@@ -208,10 +214,11 @@ nav {
     }
 
     .action {
-      border-radius: 5px;
+      border-radius: 6px;
       font-weight: bold;
       font-size: 0.8rem;
       min-width: 60px;
+      padding: 4px;
     }
   }
 }

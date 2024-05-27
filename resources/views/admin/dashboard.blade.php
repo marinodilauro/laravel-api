@@ -90,7 +90,7 @@
                       @if (count($project->tags) > 0)
                         <div class="d-flex gap-1 flex-wrap">
                           @foreach ($project->tags as $tag)
-                            <div class="tag {{ $tag->slug }}">{{ $tag->name }} </div>
+                            <div class="tag small {{ $tag->slug }}">{{ $tag->name }} </div>
                           @endforeach
                         </div>
                       @else
