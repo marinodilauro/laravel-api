@@ -33,15 +33,14 @@ class TechnologyController extends Controller
         // validate
         $val_data = $request->validated();
 
-        $slug = Str::slug($request->name, '-');
+        $slug = Str::slug($request->name, '-', 'en', ['#' => 'sharp', '++' => 'plusplus']);
         $val_data['slug'] = $slug;
 
         // create
-        // dd($val_data);
         Technology::create($val_data);
 
         // redirect
-        return to_route('admin.technologies.index')->with('message', "Type created succesfully!");
+        return to_route('admin.technologies.index')->with('message', "Technology created succesfully!");
     }
 
     /**

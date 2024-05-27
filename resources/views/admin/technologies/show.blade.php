@@ -4,11 +4,11 @@
   <header class="py-3 bg_dark text-white">
     <div class="custom_container d-flex align-items-center justify-content-between">
 
-      <h1>{{ $type->name }}</h1>
+      <h1>{{ $technology->name }}</h1>
 
-      <a class="custom_btn btn_primary" href="{{ route('admin.types.index') }}">
+      <a class="custom_btn btn_primary" href="{{ route('admin.technologies.index') }}">
         <i class="fa-solid fa-angle-left fa-sm"></i>
-        Back to types
+        Back to technologies
       </a>
 
     </div>
@@ -21,20 +21,15 @@
 
           <div class="card-header">
             <h3 class="card-title">
-              {{ $type->name }}
+              {{ $technology->name }}
             </h3>
           </div>
 
           <div class="card-body">
 
             <div class="mb-3">
-              <strong>Type description: </strong>
-              <p>{{ $type->description }}</p>
-            </div>
-
-            <div class="mb-3">
               <strong>Preview: </strong>
-              <span class="type {{ $type->slug }}">{{ $type->name }} </span>
+              <span class="tag {{ $technology->slug }}">{{ $technology->name }} </span>
             </div>
 
           </div>

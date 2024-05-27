@@ -23,6 +23,8 @@
 
     <div class="dashboard flex-fill bg_light p-4">
 
+      @include('partials.action-confirmation')
+
       <!-- Types table -->
       <div class="table-responsive">
         <table class="table table-striped table-hover m-0">

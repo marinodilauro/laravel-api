@@ -4,11 +4,11 @@
   <header class="py-3 bg_dark text-white">
     <div class="custom_container d-flex align-items-center justify-content-between">
 
-      <h1>Editing type: {{ $type->name }}</h1>
+      <h1>Editing type: {{ $technology->name }}</h1>
 
-      <a class="custom_btn btn_primary" href="{{ route('admin.types.index') }}">
+      <a class="custom_btn btn_primary" href="{{ route('admin.technologies.index') }}">
         <i class="fa-solid fa-angle-left fa-sm"></i>
-        Back to types
+        Back to technologies
       </a>
 
     </div>
@@ -19,30 +19,17 @@
     @include('partials.validation-errors')
     @include('partials.action-confirmation')
 
-    <form action="{{ route('admin.types.update', $type) }}" method="post">
+    <form action="{{ route('admin.technologies.update', $technology) }}" method="post">
       @csrf
       @method('PUT')
 
       <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
-          aria-describedby="nameHelper" placeholder="Library" value="{{ old('name', $type->name) }}" />
-        <small id="nameHelper" class="form-text text-muted">Edit the name og this type</small>
+          aria-describedby="nameHelper" placeholder="Python" value="{{ old('name', $technology->name) }}" />
+        <small id="nameHelper" class="form-text text-muted">Edit the name og this technology</small>
 
         @error('name')
-          <div class="text-danger">{{ $message }}</div>
-        @enderror
-
-      </div>
-
-      <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-        <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description"
-          rows="5">{{ old('description', $type->description) }}
-        </textarea>
-        <small id="descriptionHelper" class="form-text text-muted">Edit the description of this type</small>
-
-        @error('description')
           <div class="text-danger">{{ $message }}</div>
         @enderror
 

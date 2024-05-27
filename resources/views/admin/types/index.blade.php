@@ -21,6 +21,8 @@
 
     <!-- Dashboard -->
 
+    @include('partials.action-confirmation')
+
     <div class="dashboard bg_light p-4">
 
       <!-- Types table -->
