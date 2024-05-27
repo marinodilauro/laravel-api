@@ -65,6 +65,8 @@ nav {
   }
 }
 
+/* #region ::: TYPES ::: */
+
 .type {
   color: #fefefe;
   height: 30px;
@@ -91,6 +93,75 @@ nav {
 .back-end {
   background-color: $color_backend_badge;
 }
+
+/* #endregion ::: TYPES ::: */
+
+/* #region ::: TAGS ::: */
+
+.tag {
+  color: #fefefe;
+  height: 30px;
+  width: 75px;
+  padding: 10px;
+  border: 1px solid #fefefe;
+  background-color: #2e2e2e;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.65rem;
+  font-weight: 500;
+}
+
+.html {
+  background-color: $color_fullstack_badge;
+}
+
+.css {
+  background-color: $color_frontend_badge;
+}
+
+.php {
+  background-color: $color_backend_badge;
+}
+
+.c_sharp {
+  background-color: $color_fullstack_badge;
+}
+
+.vuejs {
+  background-color: $color_frontend_badge;
+}
+
+.javascript {
+  background-color: $color_backend_badge;
+}
+
+.laravel {
+  background-color: $color_frontend_badge;
+}
+
+.vite {
+  background-color: $color_backend_badge;
+}
+
+.ai {
+  background-color: $color_fullstack_badge;
+}
+
+.machine_learning {
+  background-color: $color_frontend_badge;
+}
+
+.game {
+  background-color: $color_backend_badge;
+}
+
+.unity {
+  background-color: $color_backend_badge;
+}
+
+/* #endregion ::: TAGS ::: */
 
 /* #endregion :::: UTILITIES :::: */
 
