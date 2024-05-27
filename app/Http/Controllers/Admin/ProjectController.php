@@ -78,7 +78,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
-        return view('admin.projects.edit', compact('project', 'types'));
+        $technologies = Technology::all();
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
 
     /**
@@ -88,7 +89,7 @@ class ProjectController extends Controller
     {
         // dd($request);
 
-        // validate
+        // Validate
         $val_data = $request->validated();
 
 
@@ -106,10 +107,16 @@ class ProjectController extends Controller
             $val_data['thumb'] = $image_path;
         }
 
-        // create
+        // Update
+        if ($request->has('technologies')) {
+            $project->technologies()->sync($val_data['technologies']);
+        } else {
+            $project->technologies()->sync([]);
+        }
+
         $project->update($val_data);
 
-        // redirect
+        // Redirect
         return to_route('admin.projects.edit', $project)->with('message', "Project $project->title updated succesfully!");
     }
 
