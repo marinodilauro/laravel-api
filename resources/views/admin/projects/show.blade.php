@@ -46,10 +46,10 @@
 
           <div>
             <strong>Technologies used in this project: </strong>
-            @if (count($project->tags) > 0)
-              <div class="d-flex gap-1 flex-wrap mt-2">
-                @foreach ($project->tags as $tag)
-                  <div class="tag {{ $tag->slug }}">{{ $tag->name }} </div>
+            @if (count($project->technologies) > 0)
+              <div class="d-flex gap-1 flex-wrap">
+                @foreach ($project->technologies as $technology)
+                  <div class="tag small {{ $technology->slug }}">{{ $technology->name }} </div>
                 @endforeach
               </div>
             @else

@@ -1,18 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-  <!-- Dashboard top -->
-
-  <div class="py-3 bg_dark text-white">
-    <div class="custom_container d-flex align-items-center justify-content-between">
-      <h1>Programming languages and frameworks </h1>
-      <a class="custom_btn btn_primary" href="{{ route('admin.technologies.create') }}">
-        <i class="fa-solid fa-plus fa-sm"></i>
-        Add new technology
-      </a>
-    </div>
-  </div>
-
   <div class="dashboard_container d-flex">
 
     <!-- Sidebar -->
@@ -22,6 +10,14 @@
     <!-- Dashboard -->
 
     <div class="dashboard flex-fill bg_light p-4">
+
+      <div class="container-fluid d-flex align-items-center justify-content-between px-0 mb-3">
+        <h1>Programming languages and frameworks </h1>
+        <a class="custom_btn btn_primary" href="{{ route('admin.technologies.create') }}">
+          <i class="fa-solid fa-plus fa-sm"></i>
+          Add new technology
+        </a>
+      </div>
 
       @include('partials.action-confirmation')
 

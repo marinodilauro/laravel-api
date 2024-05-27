@@ -86,6 +86,6 @@ class TypeController extends Controller
     {
         $type->delete();
 
-        return to_route('admin.types.index')->with('message', "Type $type->name deleted succesfully!");
+        return to_route('admin.dashboard')->with('message', "Type $type->name deleted succesfully!");
     }
 }

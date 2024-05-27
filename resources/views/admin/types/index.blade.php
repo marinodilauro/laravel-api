@@ -1,18 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-  <!-- Dashboard top -->
-
-  <div class="py-3 bg_dark text-white">
-    <div class="custom_container d-flex align-items-center justify-content-between">
-      <h1>Project types</h1>
-      <a class="custom_btn btn_primary" href="{{ route('admin.types.create') }}">
-        <i class="fa-solid fa-plus fa-sm"></i>
-        Add new project type
-      </a>
-    </div>
-  </div>
-
   <div class="dashboard_container d-flex">
 
     <!-- Sidebar -->
@@ -21,9 +9,18 @@
 
     <!-- Dashboard -->
 
-    @include('partials.action-confirmation')
 
     <div class="dashboard bg_light p-4">
+
+      <div class="container-fluid d-flex align-items-center justify-content-between px-0 mb-3">
+        <h1>Project types</h1>
+        <a class="custom_btn btn_primary" href="{{ route('admin.types.create') }}">
+          <i class="fa-solid fa-plus fa-sm"></i>
+          Add new project type
+        </a>
+      </div>
+
+      @include('partials.action-confirmation')
 
       <!-- Types table -->
       <div class="table-responsive">

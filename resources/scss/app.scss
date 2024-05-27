@@ -65,6 +65,28 @@ nav {
   }
 }
 
+.action_small {
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  width: 30px;
+  aspect-ratio: 1;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.action {
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  min-width: 60px;
+  padding: 4px;
+}
+
 /* #region ::: TYPES ::: */
 
 .type {
@@ -192,7 +214,7 @@ nav {
 /* #region :::: TABLE :::: */
 
 .table-responsive {
-  border-radius: 9px;
+  border-radius: 6px;
   box-shadow: 0 0 1.5rem 0.2px #3e3e3e;
   margin-bottom: 2rem;
   max-height: 90%;
@@ -210,26 +232,10 @@ nav {
     td {
       font-size: 0.8rem;
     }
-
-    .action_small {
-      border-radius: 5px;
-      font-weight: bold;
-      font-size: 0.8rem;
-      width: 30px;
-      aspect-ratio: 1;
-    }
-
-    .action {
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 0.8rem;
-      min-width: 60px;
-      padding: 4px;
-    }
   }
 
   &.technologies_table {
-    max-height: 527px;
+    max-height: 500px;
   }
 }
 
