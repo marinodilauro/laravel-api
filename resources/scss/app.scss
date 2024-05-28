@@ -206,6 +206,11 @@ nav {
   border-color: #b770ff;
 }
 
+.python {
+  background-color: #aeff70;
+  border-color: #aeff70;
+}
+
 /* #endregion ::: TAGS ::: */
 
 /* #endregion :::: UTILITIES :::: */
@@ -234,8 +239,12 @@ nav {
     }
   }
 
+  &.types_table {
+    max-height: 250px;
+  }
+
   &.technologies_table {
-    max-height: 500px;
+    max-height: 420px;
   }
 }
 
@@ -243,6 +252,20 @@ nav {
 
 /* #endregion :::: TABLE :::: */
 
+
+/* #region :::: OFFCANVAS :::: */
+
+.offcanvas {
+  form {
+    .form-check {
+      label {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+/* #endregion :::: OFFCANVAS :::: */
 
 /* #region :::: PAGINATION :::: */
 .page-link,

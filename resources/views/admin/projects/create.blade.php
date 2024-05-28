@@ -45,10 +45,13 @@
           @endforeach
 
         </select>
+        <small id="type_idHelper" class="form-text text-muted">Select a type for this project</small>
+
       </div>
 
       <label for="technologies[]" class="form-label">Technology used</label>
       <div class="mb-3 d-flex gap-3 flex-wrap">
+
         @foreach ($technologies as $technology)
           <div class="form-check @error('technologies') is-invalid @enderror">
 

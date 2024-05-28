@@ -12,6 +12,9 @@
 
     <div class="dashboard bg_light px-3 py-4">
 
+      @include('partials.action-confirmation')
+
+
       <div class="row">
 
         <!-- Projects table -->
@@ -22,13 +25,13 @@
             <h4 class="text-secondary my-0">Projects</h4>
 
             {{-- New item button --}}
-            <button type="button" class="action_small btn_primary ms-3 me-2">
+            {{--             <button type="button" class="action_small btn_primary ms-3 me-2">
               <a class="text-decoration-none text-white" href="{{ route('admin.projects.create') }}"
                 title="Add new projects">
                 <i class="fa-solid fa-plus"></i>
               </a>
-            </button>
-
+            </button> --}}
+            @include('partials.offcanvas-project')
             {{-- Divider --}}
             <hr class="w-100 border-2">
 
@@ -189,12 +192,12 @@
             <h5 class="text-secondary my-0">Project types</h5>
 
             {{-- New item button --}}
-            <button type="button" class="action_small btn_primary ms-3 me-2">
+            {{--             <button type="button" class="action_small btn_primary ms-3 me-2">
               <a class="text-decoration-none text-white" href="{{ route('admin.types.create') }}" title="Add new type">
                 <i class="fa-solid fa-plus"></i>
               </a>
-            </button>
-
+            </button> --}}
+            @include('partials.offcanvas-type')
             {{-- Divider --}}
             <hr class="border-2" style="width: 375px;">
           </div>
@@ -219,7 +222,7 @@
                     <td scope="row">{{ $type->id }}</td>
                     <td>{{ $type->name }}</td>
                     <td>{{ $type->slug }}</td>
-                    <td width="30%" class="text-truncate" style="max-width:1px">{{ $type->description }}</td>
+                    <td width="23%" class="text-truncate" style="max-width:1px">{{ $type->description }}</td>
                     <td>
                       <div class="type {{ $type->slug }}">{{ $type->name }} </div>
                     </td>
@@ -309,13 +312,13 @@
             <h5 class="text-secondary my-0">Technologies</h5>
 
             {{-- New item button --}}
-            <button type="button" class="action_small btn_primary ms-3 me-2">
+            {{--            <button type="button" class="action_small btn_primary ms-3 me-2">
               <a class="text-decoration-none text-white" href="{{ route('admin.technologies.create') }}"
                 title="Add new technology">
                 <i class="fa-solid fa-plus"></i>
               </a>
-            </button>
-
+            </button> --}}
+            @include('partials.offcanvas-technology')
             {{-- Divider --}}
             <hr class="w-75 border-2">
           </div>

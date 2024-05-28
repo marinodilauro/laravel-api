@@ -40,7 +40,7 @@ class TechnologyController extends Controller
         Technology::create($val_data);
 
         // redirect
-        return to_route('admin.technologies.index')->with('message', "Technology created succesfully!");
+        return to_route('admin.dashboard')->with('message', "New technology added succesfully!");
     }
 
     /**
@@ -85,6 +85,6 @@ class TechnologyController extends Controller
     {
         $technology->delete();
 
-        return to_route('admin.types.index')->with('message', "Type $technology->name deleted succesfully!");
+        return to_route('admin.dashboard')->with('message', "Type $technology->name deleted succesfully!");
     }
 }
