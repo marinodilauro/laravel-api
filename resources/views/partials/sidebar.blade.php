@@ -1,7 +1,7 @@
-<div class="sidebar bg_dark text-white d-flex flex-column justify-content-between align-items-center px-2 py-4">
+<div class="sidebar bg_dark text-white d-flex flex-column justify-content-between align-items-center px-2 pb-4 pt-2">
 
 
-  <img width="75" src="{{ asset('storage/Avatar.jpg') }}" class="rounded-circle mb-3">
+  <img width="65" src="{{ asset('storage/Avatar.jpg') }}" class="rounded-circle mb-4">
 
   <ul class="m-0 list-unstyled  flex-fill">
 

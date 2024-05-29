@@ -41,7 +41,7 @@
           <div class="flex-fill">
             <!-- Dashboard header-->
             <header class="d-flex align-items-center">
-              <h3 class="display-6 m-0">://{{ Str::substr(Request::url(), 22) }}</h3>
+              <h3 class="display-6 text-secondary m-0">://{{ Str::substr(Request::url(), 22) }}</h3>
             </header>
 
             @yield('content')
