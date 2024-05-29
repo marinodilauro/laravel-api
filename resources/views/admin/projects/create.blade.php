@@ -1,20 +1,20 @@
 @extends('layouts.admin')
 
 @section('content')
-  <header class="py-3 bg_dark text-white">
-    <div class="custom_container d-flex align-items-center justify-content-between">
-
-      <h1>Adding new project</h1>
-
-      <a class="custom_btn btn_primary" href="{{ route('admin.projects.index') }}">
-        <i class="fa-solid fa-angle-left fa-sm"></i>
-        Back to projects
-      </a>
-
-    </div>
-  </header>
-
   <div class="container py-5">
+
+    <div class="mb-3">
+      <div class="d-flex align-items-center justify-content-between">
+
+        <h3>Adding new project</h3>
+
+        <a class="custom_btn btn_primary" href="{{ route('admin.projects.index') }}">
+          <i class="fa-solid fa-angle-left fa-sm"></i>
+          Back to projects
+        </a>
+
+      </div>
+    </div>
 
     @include('partials.validation-errors')
 

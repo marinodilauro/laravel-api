@@ -1,21 +1,23 @@
 @extends('layouts.admin')
 
 @section('content')
-  <header class="py-3 bg_dark text-white">
-    <div class="custom_container d-flex align-items-center justify-content-between">
-
-      <h1>{{ $project->title }}</h1>
-
-      <a class="custom_btn btn_primary" href="{{ route('admin.projects.index') }}">
-        <i class="fa-solid fa-angle-left fa-sm"></i>
-        Back to projects
-      </a>
-
-    </div>
-  </header>
 
   <section class="py-5">
+    <div class="container mb-5">
+      <div class="d-flex align-items-center justify-content-between">
+
+        <h3>{{ $project->title }}</h3>
+
+        <a class="custom_btn btn_primary" href="{{ route('admin.projects.index') }}">
+          <i class="fa-solid fa-angle-left fa-sm"></i>
+          Back to projects
+        </a>
+
+      </div>
+    </div>
     <div class="container d-flex gap-5">
+
+
 
       @if (Str::startsWith($project->thumb, 'https'))
         <img width=700 src="{{ $project->thumb }}" alt="{{ $project->title }}">

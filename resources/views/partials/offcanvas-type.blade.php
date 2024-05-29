@@ -7,7 +7,7 @@
 
   </button>
 
-  <div class="offcanvas offcanvas-end {{ session('type-form') === 'type-new' && $errors->any() ? 'show' : '' }} w-50"
+  <div class="offcanvas offcanvas-end {{ session('type-form') === 'type-new' && $errors->any() ? 'show' : '' }} w-25"
     tabindex="-1" id="add_new_type" aria-labelledby="add_new_typeLabel">
 
     <div class="offcanvas-header">

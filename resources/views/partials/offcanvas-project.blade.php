@@ -8,7 +8,7 @@
           </button>
 
           <div
-            class="offcanvas offcanvas-end {{ session('project-form') === 'project-new' && $errors->any() ? 'show' : '' }} w-50"
+            class="offcanvas offcanvas-start {{ session('project-form') === 'project-new' && $errors->any() ? 'show' : '' }} w-50"
             tabindex="-1" id="add_new_project" aria-labelledby="add_new_projectLabel">
 
             <div class="offcanvas-header px-3 pt-3 pb-0">

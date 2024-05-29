@@ -8,7 +8,7 @@
           </button>
 
           <div
-            class="offcanvas offcanvas-end {{ session('technology-form') === 'technology-new' && $errors->any() ? 'show' : '' }} w-50"
+            class="offcanvas offcanvas-end {{ session('technology-form') === 'technology-new' && $errors->any() ? 'show' : '' }} w-25"
             tabindex="-1" id="add_new_technology" aria-labelledby="add_new_technologyLabel">
 
             <div class="offcanvas-header">
