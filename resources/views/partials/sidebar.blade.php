@@ -1,34 +1,34 @@
-<div class="sidebar bg_dark text-white d-flex flex-column justify-content-between align-items-center px-2 pb-4 pt-2">
+<div class="sidebar bg_dark text-white d-flex flex-column justify-content-between align-items-start px-2 pb-4 pt-2">
 
 
-  <img width="65" src="{{ asset('storage/Avatar.jpg') }}" class="rounded-circle mb-4">
+  <img width="65" src="{{ asset('storage/Avatar.jpg') }}" class="rounded-circle align-self-center mb-4">
 
-  <ul class="m-0 list-unstyled  flex-fill">
+  <ul class="nav_link list-unstyled flex-fill m-0 ps-2">
 
-    <li class="pb-2">
-      <a class="d-flex align-items-center gap-2 p-1" href="{{ route('admin.dashboard') }}">
-        <i class="fa-solid fa-house fa-xs"></i>
+    <li class="d-flex align-items-center gap-2 p-1 pb-2">
+      <i class="fa-solid fa-house fa-xs"></i>
+      <a href="{{ route('admin.dashboard') }}">
         {{ __('Dashboard') }}
       </a>
     </li>
 
-    <li class="pb-2">
-      <a class="d-flex align-items-center gap-2 p-1" href="{{ route('admin.projects.index') }}">
-        <i class="fa-regular fa-folder-open fa-xs"></i>
+    <li class="d-flex align-items-center gap-2 p-1 pb-2">
+      <i class="fa-regular fa-folder-open fa-xs"></i>
+      <a href="{{ route('admin.projects.index') }}">
         {{ __('Projects') }}
       </a>
     </li>
 
-    <li class="pb-2">
-      <a class="d-flex align-items-center gap-2 p-1" href="{{ route('admin.types.index') }}">
-        <i class="fa-solid fa-list fa-xs"></i>
+    <li class="d-flex align-items-center gap-2 p-1 pb-2">
+      <i class="fa-solid fa-list fa-xs"></i>
+      <a href="{{ route('admin.types.index') }}">
         {{ __('Project types') }}
       </a>
     </li>
 
-    <li class="pb-2">
-      <a class="d-flex align-items-center gap-2 p-1" href="{{ route('admin.technologies.index') }}">
-        <i class="fa-solid fa-tags fa-xs"></i>
+    <li class="d-flex align-items-center gap-2 p-1 pb-2">
+      <i class="fa-solid fa-tags fa-xs"></i>
+      <a href="{{ route('admin.technologies.index') }}">
         {{ __('Technologies') }}
       </a>
     </li>
@@ -36,20 +36,22 @@
 
   </ul>
 
-  <div class="dropup-center dropup">
+  <div class="dropup-center dropup d-flex align-items-center gap-2 ps-2 p-1">
 
-    <a class="d-flex align-items-center dropdown-toggle gap-2 p-1" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-gear fa-xs"></i>
+    <a data-bs-toggle="dropdown" aria-expanded="false">
       {{ Auth::user()->name }}
-
     </a>
 
     <ul class="dropdown-menu">
 
-      <li>
+      <li class="d-flex align-items-center ms-3">
+        <i class="fa-solid fa-user fa-xs"></i>
         <a class="dropdown-item" href="{{ url('profile') }}">{{ __('Profile') }}</a>
       </li>
 
-      <li>
+      <li class="d-flex align-items-center ms-3">
+        <i class="fa-solid fa-right-from-bracket fa-xs"></i>
         <a class="dropdown-item" href="{{ route('logout') }}"
           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
           {{ __('Logout') }}
@@ -57,6 +59,7 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
           @csrf
         </form>
+
       </li>
 
     </ul>

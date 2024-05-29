@@ -331,7 +331,7 @@ main {
   height: 100vh;
   overflow-y: hidden;
 
-  header {
+  .path {
     background-color: $color_dark;
     color: $color_light;
     width: 100%;
@@ -344,13 +344,24 @@ main {
     min-width: 60px;
     flex-shrink: 0;
 
+    .nav_link {
+      li:has(a) {
+        transition: left 500ms ease-in-out;
+
+        &:hover {
+          position: relative;
+          left: 10px;
+        }
+      }
+    }
+
     a {
       text-decoration: none;
       color: var(--db-font_light);
 
       &:hover {
-        background-color: $color_primary;
-        border-radius: 4px;
+        text-decoration: underline;
+        text-decoration-color: $color_primary;
         cursor: pointer;
       }
     }
@@ -362,10 +373,16 @@ main {
         border: none;
         border-radius: 0;
 
-        a,
-        li {
-          max-width: 120px;
+
+
+        a {
+          max-width: 100px;
+
+          &:hover {
+            background-color: $color_dark;
+          }
         }
+
       }
     }
 
