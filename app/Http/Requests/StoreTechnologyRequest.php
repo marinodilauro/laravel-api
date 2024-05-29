@@ -21,6 +21,8 @@ class StoreTechnologyRequest extends FormRequest
      */
     public function rules(): array
     {
+        session()->flash('technology-form', 'technology-new');
+
         return [
             'name' => 'required|min:5|max:20'
         ];

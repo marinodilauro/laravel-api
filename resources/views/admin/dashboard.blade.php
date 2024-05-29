@@ -421,6 +421,7 @@
                 @endforelse
 
               </tbody>
+
             </table>
 
           </div>
@@ -436,7 +437,3 @@
 
   </div>
 @endsection
-
-@push('styles')
-  <link rel="stylesheet" href="{{ asset('resources/scss/partials/_welcome.scss') }}">
-@endpush

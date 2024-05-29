@@ -21,6 +21,9 @@ class StoreProjectRequest extends FormRequest
      */
     public function rules(): array
     {
+
+        session()->flash('project-form', 'project-new');
+
         return [
             'title' => 'required|min:5|max:150',
             'type_id' => 'nullable|exists:types,id',

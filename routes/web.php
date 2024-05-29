@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\TechnologyController;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\Controller\ErrorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 
 Route::middleware(['auth', 'verified'])

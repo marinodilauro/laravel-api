@@ -7,8 +7,9 @@
 
           </button>
 
-          <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="add_new_project"
-            aria-labelledby="add_new_projectLabel">
+          <div
+            class="offcanvas offcanvas-end {{ session('project-form') === 'project-new' && $errors->any() ? 'show' : '' }} w-50"
+            tabindex="-1" id="add_new_project" aria-labelledby="add_new_projectLabel">
 
             <div class="offcanvas-header px-3 pt-3 pb-0">
               <h5 class="offcanvas-title" id="add_new_projectLabel">Insert a new project</h5>
@@ -17,7 +18,7 @@
 
             <div class="offcanvas-body text-start">
 
-              @include('partials.validation-errors')
+              {{-- @include('partials.validation-errors') --}}
 
               <form action="{{ route('admin.projects.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -112,14 +113,17 @@
 
                 <div class="mb-3">
                   <label for="description" class="form-label">Description</label>
-                  <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description"
-                    rows="5">{{ old('description') }}
+                  <textarea
+                    class="form-control {{ session('project-form') === 'project-new' && $errors->has('description') ? 'is-invalid' : '' }}"
+                    name="description" id="description" rows="5">{{ session('project-form') === 'project-new' && $errors->has('description') ? old('description') : '' }}
                   </textarea>
                   <small id="descriptionHelper" class="form-text text-muted">Type a description for this type</small>
 
-                  @error('description')
-                    <div class="text-danger">{{ $message }}</div>
-                  @enderror
+                  @if (session('project-form') === 'project-new' && $errors->has('description'))
+                    @error('description')
+                      <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                  @endif
 
                 </div>
 
