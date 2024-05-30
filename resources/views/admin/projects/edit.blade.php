@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-  <div class="container py-5">
+  <div class="custom_container m-0 p-5">
 
     <div class="mb-3">
       <div class="d-flex align-items-center justify-content-between">
@@ -92,29 +92,37 @@
 
       </div>
 
-      <div class="mb-3">
-        <label for="project_link" class="form-label">Project link</label>
-        <input type="text" class="form-control @error('project_link') is-invalid @enderror" name="project_link"
-          id="project_link" aria-describedby="project_linkHelper" placeholder="https://"
-          value="{{ old('project_link', $project->project_link) }}" />
-        <small id="project_linkHelper" class="form-text text-muted">Insert the link of the project</small>
+      <div class="row row-cols-2">
 
-        @error('project_link')
-          <div class="text-danger">{{ $message }}</div>
-        @enderror
+        <div class="col">
+          <div class="mb-3">
+            <label for="project_link" class="form-label">Project link</label>
+            <input type="text" class="form-control @error('project_link') is-invalid @enderror" name="project_link"
+              id="project_link" aria-describedby="project_linkHelper" placeholder="https://"
+              value="{{ old('project_link', $project->project_link) }}" />
+            <small id="project_linkHelper" class="form-text text-muted">Insert the link of the project</small>
 
-      </div>
+            @error('project_link')
+              <div class="text-danger">{{ $message }}</div>
+            @enderror
 
-      <div class="mb-3">
-        <label for="repo_link" class="form-label">Repository link</label>
-        <input type="text" class="form-control @error('repo_link') is-invalid @enderror" name="repo_link"
-          id="repo_link" aria-describedby="repo_linkHelper" placeholder="https://"
-          value="{{ old('repo_link', $project->repo_link) }}" />
-        <small id="repo_linkHelper" class="form-text text-muted">Insert the link of the repository</small>
+          </div>
+        </div>
 
-        @error('repo_link')
-          <div class="text-danger">{{ $message }}</div>
-        @enderror
+        <div class="col">
+          <div class="mb-3">
+            <label for="repo_link" class="form-label">Repository link</label>
+            <input type="text" class="form-control @error('repo_link') is-invalid @enderror" name="repo_link"
+              id="repo_link" aria-describedby="repo_linkHelper" placeholder="https://"
+              value="{{ old('repo_link', $project->repo_link) }}" />
+            <small id="repo_linkHelper" class="form-text text-muted">Insert the link of the repository</small>
+
+            @error('repo_link')
+              <div class="text-danger">{{ $message }}</div>
+            @enderror
+
+          </div>
+        </div>
 
       </div>
 

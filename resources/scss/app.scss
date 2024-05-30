@@ -10,11 +10,6 @@ main {
   background-color: $color_light;
 }
 
-.custom_container {
-  max-width: 1600px;
-  margin: auto;
-}
-
 .bg_dark {
   background-color: $color_dark;
 }
@@ -330,6 +325,14 @@ main {
 .dashboard_container {
   height: 100vh;
   overflow-y: hidden;
+
+  .custom_container {
+    height: calc(100vh - 80px);
+
+    form {
+      font-size: 0.75rem;
+    }
+  }
 
   .path {
     background-color: $color_dark;
