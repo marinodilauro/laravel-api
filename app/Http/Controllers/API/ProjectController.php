@@ -13,7 +13,7 @@ class ProjectController extends Controller
         $projects = Project::with('type', 'technologies')->paginate(5);
         return response()->json([
             'success' => true,
-            'results' => $projects
+            'projects' => $projects
         ]);
     }
 }
