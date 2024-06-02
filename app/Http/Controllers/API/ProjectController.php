@@ -16,4 +16,13 @@ class ProjectController extends Controller
             'projects' => $projects
         ]);
     }
+    public function main()
+    {
+        $projects = Project::with('type', 'technologies')->where('highlighted', 1)->orderByDesc('id')->get();
+
+        return response()->json([
+            'success' => true,
+            'projects' => $projects
+        ]);
+    }
 }

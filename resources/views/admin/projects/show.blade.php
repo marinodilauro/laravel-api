@@ -33,12 +33,12 @@
 
         <div class="mb-3">
           <span><strong>Project link: </strong></span>
-          <a href="">{{ $project->project_link }}</a>
+          <a href="{{ $project->project_link }}" target="_blank">{{ $project->project_link }}</a>
         </div>
 
         <div class="mb-3">
           <span><strong>Repository link:</strong></span>
-          <a href="">{{ $project->repo_link }}</a>
+          <a href="{{ $project->repo_link }}" target="_blank">{{ $project->repo_link }}</a>
         </div>
 
         <div class="metadata">

@@ -50,6 +50,12 @@ class ProjectController extends Controller
             $val_data['thumb'] = $image_path;
         }
 
+        if ($request->has('highlighted')) {
+            $val_data['highlighted'] = true;
+        } else {
+            $val_data['highlighted'] = false;
+        }
+
         // Create
 
         // dd($request->all(), $val_data);
@@ -58,7 +64,6 @@ class ProjectController extends Controller
         if ($request->has('technologies')) {
             $project->technologies()->attach($val_data['technologies']);
         }
-
 
         // Redirect
         return to_route('admin.dashboard')->with('message', "New project added succesfully!");
@@ -114,6 +119,9 @@ class ProjectController extends Controller
             $project->technologies()->sync([]);
         }
 
+        $val_data['highlighted'] = $request->has('highlighted');
+
+        // dd($request->all());
         $project->update($val_data);
 
         // Redirect

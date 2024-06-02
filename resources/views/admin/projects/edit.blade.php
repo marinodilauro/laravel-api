@@ -35,6 +35,12 @@
 
       </div>
 
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="1" name="highlighted" id="highlighted"
+          {{ old('highlighted', $project->highlighted) ? 'checked="checked"' : '',  }} />
+        <label class="form-check-label" for="highlighted"> Highlighted </label>
+      </div>
+
       <div class="mb-3">
         <label for="type_id" class="form-label">Type</label>
         <select class="form-select" name="type_id" id="type_id">
