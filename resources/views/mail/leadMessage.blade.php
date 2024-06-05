@@ -1,7 +1,7 @@
 <x-mail::message>
 
   # From:
-  {{ $lead->email }} - {{ $lead->name }}
+  {{ $lead->name }} - {{ $lead->email }}
 
   # Message:
   {{ $lead->message }}
