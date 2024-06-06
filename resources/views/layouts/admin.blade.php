@@ -34,9 +34,7 @@
         <div class="dashboard_container d-flex">
 
           <!-- Sidebar -->
-
           @include('partials.sidebar')
-
 
           <div class="flex-fill">
             <!-- Dashboard header-->
@@ -45,7 +43,6 @@
             </header>
 
             @yield('content')
-
 
           </div>
       </main>

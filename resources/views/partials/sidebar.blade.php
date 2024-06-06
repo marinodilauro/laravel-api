@@ -33,6 +33,13 @@
       </a>
     </li>
 
+    <li class="d-flex align-items-center gap-2 p-1 pb-2">
+      <i class="fa-solid fa-envelope-open-text fa-xs"></i>
+      <a href="{{ route('admin.leads.index') }}">
+        {{ __('Messages') }}
+      </a>
+    </li>
+
 
   </ul>
 

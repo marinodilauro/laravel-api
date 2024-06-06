@@ -2,10 +2,10 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\LeadController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\TechnologyController;
-use App\Models\Lead;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Controller\ErrorController;
 
@@ -21,7 +21,7 @@ use Symfony\Component\HttpKernel\Controller\ErrorController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 
@@ -33,7 +33,8 @@ Route::middleware(['auth', 'verified'])
         // All routes needs to share a common name and prefix and the middleware
 
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        Route::get('/welcome', [DashboardController::class, 'homepage'])->name('welcome');
+        Route::get('/leads', [LeadController::class, 'index'])->name('leads.index');
+        Route::post('/leads/{lead}/reply', [LeadController::class, 'generateReply'])->name('leads.reply_generation');
         Route::resource('/projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
         Route::resource('/types', TypeController::class)->parameters(['types' => 'type:slug']);
         Route::resource('/technologies', TechnologyController::class)->parameters(['technologies' => 'technology:slug']);

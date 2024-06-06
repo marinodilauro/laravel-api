@@ -117,7 +117,8 @@
                     class="form-control {{ session('project-form') === 'project-new' && $errors->has('description') ? 'is-invalid' : '' }}"
                     name="description" id="description" rows="5">{{ session('project-form') === 'project-new' && $errors->has('description') ? old('description') : '' }}
                   </textarea>
-                  <small id="descriptionHelper" class="form-text text-muted">Type a description for this type</small>
+                  <small id="descriptionHelper" class="form-text text-muted">Type a description for this
+                    project</small>
 
                   @if (session('project-form') === 'project-new' && $errors->has('description'))
                     @error('description')

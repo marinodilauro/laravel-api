@@ -31,13 +31,6 @@ class LeadController extends Controller
             ]);
         }
 
-        // create the lead
-        /*
-        $newLead = new Lead();
-        $newLead->fill($data);
-        $newLead->save();
-        */
-
         $newLead = Lead::create($data);
 
         // send the email

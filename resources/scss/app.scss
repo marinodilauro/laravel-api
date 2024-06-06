@@ -186,7 +186,7 @@ main {
 }
 
 .game {
-  background-color: #e9ff70;
+  background-color: #cee64a;
   border-color: #e9ff70;
 }
 
@@ -216,7 +216,7 @@ main {
   border-radius: 6px;
   box-shadow: 0 0 1.5rem 0.2px #3e3e3e;
   margin-bottom: 2rem;
-  scrollbar-gutter: stable;
+  scrollbar-gutter: auto;
   table-layout: fixed;
   overflow-y: hidden;
 
@@ -266,6 +266,12 @@ main {
 
   &.projects_table {
     max-height: 745px;
+  }
+
+  &.messages_table {
+    max-height: 745px;
+    width: 700px;
+    margin: auto;
   }
 }
 
