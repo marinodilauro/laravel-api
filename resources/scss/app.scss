@@ -332,6 +332,10 @@ main {
   height: 100vh;
   overflow-y: hidden;
 
+  .path_text {
+    font-family: "Chivo Mono", monospace;
+  }
+
   .custom_container {
     height: calc(100vh - 80px);
 

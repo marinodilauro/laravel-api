@@ -15,17 +15,12 @@
       <div class="col-8">
 
         <div class="d-flex align-items-center mb-2">
+
           {{-- Table title --}}
           <h4 class="text-secondary my-0">Projects</h4>
 
-          {{-- New item button --}}
-          {{--             <button type="button" class="action_small btn_primary ms-3 me-2">
-              <a class="text-decoration-none text-white" href="{{ route('admin.projects.create') }}"
-                title="Add new projects">
-                <i class="fa-solid fa-plus"></i>
-              </a>
-            </button> --}}
           @include('partials.offcanvas-project')
+
           {{-- Divider --}}
           <hr class="w-100 border-2">
 
@@ -181,6 +176,7 @@
 
         <!-- Types table -->
         <div class="d-flex align-items-center mb-2">
+
           {{-- Table title --}}
           <h5 class="text-secondary my-0">Project types</h5>
 

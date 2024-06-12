@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet">
 
     <!-- Usando Vite -->
@@ -39,7 +39,7 @@
           <div class="flex-fill">
             <!-- Dashboard header-->
             <header class="d-flex align-items-center path">
-              <h3 class="display-6 text-secondary m-0">://{{ Str::substr(Request::url(), 22) }}</h3>
+              <h3 class="path_text display-6 text-secondary m-0">://{{ Str::substr(Request::url(), 22) }}</h3>
             </header>
 
             @yield('content')
