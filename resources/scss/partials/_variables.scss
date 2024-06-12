@@ -1,13 +1,17 @@
 // Color palette
 
-$color_light: #fefefe;
-$color_dark: #2e2e2e;
-$color_primary: #ff7c2e;
-$color_primary_hover: #d76726;
-$color_primary_active: rgb(160, 76, 27);
+$color_lighter: #fefefe;
+$color_light: #65747d;
+$color_dark: #1B263B;
+$color_darker: #0D1B2A;
+$color_primary: #57CC99;
+$color_primary_hover: #41996cc7;
+$color_primary_hover_border: #41996b;
+$color_primary_active: #367f59c7;
 $color_danger: #e63946;
-$color_danger_hover: #c12f3b;
-$color_danger_active: #b92d38;
-$color_fullstack_badge: #2fb373;
-$color_frontend_badge: #f4ac40;
-$color_backend_badge: #49b3f1;
+$color_danger_hover: #c12f3bc7;
+$color_danger_hover_border: #c12f3b;
+$color_danger_active: #b92d39c7;
+$color_fullstack_badge: #CC578A;
+$color_frontend_badge: #CC578A;
+$color_backend_badge: #CC578A;

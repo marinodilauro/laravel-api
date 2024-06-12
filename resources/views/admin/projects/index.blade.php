@@ -5,9 +5,9 @@
 
   <!-- Dashboard -->
 
-  <div class="dashboard flex-fill bg_light p-4">
+  <div class="dashboard flex-fill p-4">
 
-    <div class="container-fluid d-flex align-items-center justify-content-between px-0 mb-3">
+    <div class="container-fluid text-white d-flex align-items-center justify-content-between px-0 mb-3">
       <h1>Projects</h1>
       <a class="custom_btn btn_primary" href="{{ route('admin.projects.create') }}">
         <i class="fa-solid fa-plus fa-sm"></i>
@@ -174,15 +174,9 @@
       </table>
 
     </div>
+
     {{ $projects->links('pagination::bootstrap-5') }}
 
   </div>
 
-  </div>
-
-
 @endsection
-
-@push('styles')
-  <link rel="stylesheet" href="{{ asset('resources/scss/partials/_welcome.scss') }}">
-@endpush

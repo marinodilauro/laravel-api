@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-  <div class="dashboard bg_light p-4">
+  <div class="dashboard p-4">
 
     <div class="container-fluid d-flex align-items-center justify-content-between px-0 mb-3">
       <h1>Project types</h1>

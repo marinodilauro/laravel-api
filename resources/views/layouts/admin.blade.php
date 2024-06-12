@@ -31,7 +31,7 @@
     <div id="app">
 
       <main>
-        <div class="dashboard_container d-flex">
+        <div class="dashboard_container bg_darker d-flex">
 
           <!-- Sidebar -->
           @include('partials.sidebar')

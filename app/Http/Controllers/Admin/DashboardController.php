@@ -13,9 +13,8 @@ class DashboardController extends Controller
     public function index()
     {
         return view(
-            '/admin.dashboard',
+            '/admin.tags.index',
             [
-                'projects' => Project::orderByDesc('id')->get(),
                 'types' => Type::orderBy('id')->get(),
                 'technologies' => Technology::orderBy('id')->get()
             ]

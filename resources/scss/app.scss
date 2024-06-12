@@ -4,6 +4,7 @@
 /* #region :::: UTILITIES :::: */
 body {
   font: 400 16px/1.5 "Poppins", sans-serif;
+  color: $color_lighter;
 }
 
 main {
@@ -12,6 +13,10 @@ main {
 
 .bg_dark {
   background-color: $color_dark;
+}
+
+.bg_darker {
+  background-color: $color_darker;
 }
 
 .bg_light {
@@ -28,12 +33,12 @@ main {
 .btn_primary {
   background-color: $color_primary;
   border-color: $color_primary;
-  color: white;
+  color: $color_lighter;
 
   &:focus,
   &:hover {
     background-color: $color_primary_hover;
-    border-color: $color_primary_hover;
+    border-color: $color_primary_hover_border;
   }
 
   &:active {
@@ -43,14 +48,13 @@ main {
 }
 
 .btn_red {
-  background-color: $color_danger;
-  border-color: $color_danger;
-  color: white;
+  border-color: $color_light;
+  color: $color_lighter;
 
   &:focus,
   &:hover {
     background-color: $color_danger_hover;
-    border-color: $color_danger_hover;
+    border-color: $color_danger_hover_border;
   }
 
   &:active {
@@ -60,6 +64,8 @@ main {
 }
 
 .action_small {
+  background-color: transparent;
+  border: 1px solid $color_light;
   border-radius: 5px;
   font-weight: bold;
   font-size: 0.8rem;
@@ -74,6 +80,8 @@ main {
 }
 
 .action {
+  background-color: transparent;
+  border: 1px solid $color_light;
   border-radius: 6px;
   font-weight: bold;
   font-size: 0.8rem;
@@ -213,8 +221,6 @@ main {
 /* #region :::: TABLE :::: */
 
 .table-responsive {
-  border-radius: 6px;
-  box-shadow: 0 0 1.5rem 0.2px #3e3e3e;
   margin-bottom: 2rem;
   scrollbar-gutter: auto;
   table-layout: fixed;
@@ -244,6 +250,8 @@ main {
 
   thead {
     th {
+      background-color: $color_dark;
+      color: $color_lighter;
       position: sticky;
       top: 0px;
       font-size: 0.9rem;
@@ -251,9 +259,27 @@ main {
   }
 
   tbody {
+    tr {
+      border-color: $color_light;
+    }
+
+    tr:nth-child(even) {
+      td {
+        background-color: $color_dark;
+      }
+    }
+
+    tr:nth-child(odd) {
+      td {
+        background-color: $color_darker;
+      }
+    }
+
     td {
+      color: $color_lighter;
       font-size: 0.8rem;
     }
+
   }
 
   &.types_table {
@@ -293,33 +319,40 @@ main {
 /* #endregion :::: OFFCANVAS :::: */
 
 /* #region :::: PAGINATION :::: */
-.page-link,
-.page-item {
-  color: $color_light;
-}
+.pagination_wrapper {
 
-.disabled>.page-link {
-  border-color: $color_light;
-}
-
-.active>.bg_primary {
-  background-color: $color_primary;
-  border: 1px solid #e9ecef;
-}
-
-.pagination {
-
-  span,
-  a {
-    width: 36px;
-    text-align: center;
-    aspect-ratio: 1;
-    padding: 6px 12px;
-    border: 1px solid #e9ecef;
+  div {
+    background-color: $color_darker;
   }
 
-  a {
-    background-color: #3e3e3e;
+  .page-link {
+    color: $color_lighter;
+    border: 1px solid $color_light;
+  }
+
+  .disabled>.page-link {
+    color: $color_light;
+    border: 1px solid $color_light;
+  }
+
+  .active>.bg_primary {
+    background-color: $color_primary;
+    border: 1px solid $color_light;
+  }
+
+  .pagination {
+
+    span,
+    a {
+      width: 36px;
+      text-align: center;
+      aspect-ratio: 1;
+      padding: 6px 12px;
+    }
+
+    a {
+      background-color: #3e3e3e;
+    }
   }
 }
 

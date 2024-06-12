@@ -6,13 +6,6 @@
   <ul class="nav_link list-unstyled flex-fill m-0 ps-2">
 
     <li class="d-flex align-items-center gap-2 p-1 pb-2">
-      <i class="fa-solid fa-house fa-xs"></i>
-      <a href="{{ route('admin.dashboard') }}">
-        {{ __('Dashboard') }}
-      </a>
-    </li>
-
-    <li class="d-flex align-items-center gap-2 p-1 pb-2">
       <i class="fa-regular fa-folder-open fa-xs"></i>
       <a href="{{ route('admin.projects.index') }}">
         {{ __('Projects') }}
@@ -20,16 +13,9 @@
     </li>
 
     <li class="d-flex align-items-center gap-2 p-1 pb-2">
-      <i class="fa-solid fa-list fa-xs"></i>
-      <a href="{{ route('admin.types.index') }}">
-        {{ __('Project types') }}
-      </a>
-    </li>
-
-    <li class="d-flex align-items-center gap-2 p-1 pb-2">
       <i class="fa-solid fa-tags fa-xs"></i>
-      <a href="{{ route('admin.technologies.index') }}">
-        {{ __('Technologies') }}
+      <a href="{{ route('admin.tags') }}">
+        {{ __('Tags') }}
       </a>
     </li>
 
@@ -39,7 +25,6 @@
         {{ __('Messages') }}
       </a>
     </li>
-
 
   </ul>
 

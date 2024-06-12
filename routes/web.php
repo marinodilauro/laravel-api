@@ -32,7 +32,7 @@ Route::middleware(['auth', 'verified'])
         // Put all the routes that needs to be protected by our authentication system
         // All routes needs to share a common name and prefix and the middleware
 
-        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/', [DashboardController::class, 'index'])->name('tags');
         Route::get('/leads', [LeadController::class, 'index'])->name('leads.index');
         Route::post('/leads/{lead}/reply', [LeadController::class, 'generateReply'])->name('leads.reply_generation');
         Route::resource('/projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
