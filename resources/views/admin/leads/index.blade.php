@@ -9,191 +9,193 @@
       <h1>Lead messages</h1>
     </div>
 
-
-    <!-- Messages table -->
-    <div class="messages_table table-responsive m-auto">
-
+    <div class="m-auto">
       @include('partials.action-confirmation')
 
-      <table class="table table-striped table-hover m-0">
+      <!-- Messages table -->
+      <div class="messages_table table-responsive m-auto">
 
-        <thead class="table-dark">
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">NAME</th>
-            <th scope="col">EMAIL</th>
-            <th scope="col">ACTIONS</th>
-          </tr>
-        </thead>
 
-        <tbody>
+        <table class="table table-striped table-hover m-0">
 
-          @forelse ($leads as $lead)
+          <thead class="table-dark">
             <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NAME</th>
+              <th scope="col">EMAIL</th>
+              <th scope="col">ACTIONS</th>
+            </tr>
+          </thead>
 
-              {{-- ID --}}
-              <td width="1%">{{ $lead->id }}</td>
+          <tbody>
 
-              {{-- Name --}}
-              <td width="20%">{{ $lead->name }}</td>
+            @forelse ($leads as $lead)
+              <tr>
 
-              {{-- Email --}}
-              <td width="30%">{{ $lead->email }}</td>
+                {{-- ID --}}
+                <td width="1%">{{ $lead->id }}</td>
 
-              {{-- Actions --}}
-              <td class="d-flex">
+                {{-- Name --}}
+                <td width="20%">{{ $lead->name }}</td>
 
-                {{-- Reply action --}}
-                <!-- Modal trigger button -->
-                <button type="button" class="action btn_primary me-1" data-bs-toggle="modal"
-                  data-bs-target="#replyModal-{{ $lead->id }}" title="Reply">
-                  Reply
-                  <i class="fa-solid fa-reply fa-xs ms-1"></i>
-                </button>
+                {{-- Email --}}
+                <td width="30%">{{ $lead->email }}</td>
 
-                <!-- Modal Body -->
-                <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-                <div class="modal fade" id="replyModal-{{ $lead->id }}" tabindex="-1" data-bs-backdrop="static"
-                  data-bs-keyboard="false" role="dialog" aria-labelledby="replyModalLabel-{{ $lead->id }}"
-                  aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
-                    <div class="modal-content">
+                {{-- Actions --}}
+                <td class="d-flex">
 
-                      <div class="modal-header justify-content-center align-items-center bg_dark">
-                        <h5 class="modal-title text-center text-white" id="replyModalLabel-{{ $lead->id }}">
-                          Reply to the message
-                        </h5>
-                      </div>
-
-                      <div class="modal-body">
-
-                        <div class="mb-2">
-                          <span><strong>From:</strong></span>
-                          <span>
-                            {{ $lead->name }}
-                          </span>
-                        </div>
-
-                        <span><strong>Message:</strong></span>
-                        <br>
-                        <div class="mb-2">
-                          {{ $lead->message }}
-                        </div>
-
-                        <div class="mb-2">
-                          <span><strong>To:</strong></span>
-                          <span>
-                            {{ $lead->email }}
-                          </span>
-                        </div>
-
-                        <div>
-
-                          <label for="replyMessage" class="form-label">
-                            <strong>Your message:</strong>
-                          </label>
-                          <textarea class="form-control name="replyMessage" id="replyModalLabel-{{ $lead->id }}" rows="5">
-                            {{ $lead->reply }}
-                          </textarea>
-                          <small id="replyMessageHelper" class="form-text text-muted">Type a message to reply</small>
-
-                        </div>
-
-                      </div>
-
-                      <div class="d-flex justify-content-end gap-3 p-3">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                          Close
-                        </button>
-
-                        <form {{-- action="{{ route('admin.leads.send', $lead) }}" --}} method="post">
-                          @csrf
-                          <button type="submit" class="btn btn_red">
-                            Send
-                          </button>
-                        </form>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-                {{-- Generate AI message action --}}
-                <form action="{{ route('admin.leads.reply_generation', $lead) }}" method="post">
-                  @csrf
-
-                  <button type="submit" class="action btn_primary me-1">
-                    <a class="text-decoration-none text-white" title="Generate response with AI">
-                      Generate message
-                      <i class="fa-solid fa-wand-magic-sparkles fa-sm ms-1"></i>
-                    </a>
+                  {{-- Reply action --}}
+                  <!-- Modal trigger button -->
+                  <button type="button" class="action btn_primary me-1" data-bs-toggle="modal"
+                    data-bs-target="#replyModal-{{ $lead->id }}" title="Reply">
+                    Reply
+                    <i class="fa-solid fa-reply fa-xs ms-1"></i>
                   </button>
 
-                </form>
+                  <!-- Modal Body -->
+                  <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                  <div class="modal fade" id="replyModal-{{ $lead->id }}" tabindex="-1" data-bs-backdrop="static"
+                    data-bs-keyboard="false" role="dialog" aria-labelledby="replyModalLabel-{{ $lead->id }}"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+                      <div class="modal-content">
 
-                {{-- Delete action --}}
-                <!-- Modal trigger button -->
-                <button type="button" class="action btn_red" data-bs-toggle="modal"
-                  data-bs-target="#modalId-{{ $lead->id }}" title="Delete">
-                  Delete
-                  <i class="fa-solid fa-trash-can fa-sm ms-1"></i>
-                </button>
+                        <div class="modal-header justify-content-center align-items-center bg_dark">
+                          <h5 class="modal-title text-center text-white" id="replyModalLabel-{{ $lead->id }}">
+                            Reply to the message
+                          </h5>
+                        </div>
 
-                <!-- Modal Body -->
-                <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-                <div class="modal fade" id="modalId-{{ $lead->id }}" tabindex="-1" data-bs-backdrop="static"
-                  data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId-{{ $lead->id }}"
-                  aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
-                    <div class="modal-content">
+                        <div class="modal-body">
 
-                      <div class="modal-header justify-content-center align-items-center bg-danger">
-                        <h5 class="modal-title text-center text-white" id="modalTitleId">
-                          ⚠️ ATTENTION ⚠️
+                          <div class="mb-2">
+                            <span><strong>From:</strong></span>
+                            <span>
+                              {{ $lead->name }}
+                            </span>
+                          </div>
+
+                          <span><strong>Message:</strong></span>
                           <br>
-                          This action is irreversible
-                        </h5>
-                      </div>
+                          <div class="mb-2">
+                            {{ $lead->message }}
+                          </div>
 
-                      <div class="modal-body text-center">
-                        You are about to delete the message from "{{ $lead->name }}"
-                        <br>
-                        Are you sure you want to delete this message?
-                      </div>
+                          <div class="mb-2">
+                            <span><strong>To:</strong></span>
+                            <span>
+                              {{ $lead->email }}
+                            </span>
+                          </div>
 
-                      <div class="d-flex justify-content-end gap-3 p-3">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                          Close
-                        </button>
+                          <div>
 
-                        <form {{-- action="{{ route('admin.leads.destroy', $lead) }}" --}} method="post">
-                          @csrf
-                          @method('DELETE')
-                          <button type="submit" class="btn btn_red">
-                            Confirm
+                            <label for="replyMessage" class="form-label">
+                              <strong>Your message:</strong>
+                            </label>
+                            <textarea class="form-control name="replyMessage" id="replyModalLabel-{{ $lead->id }}" rows="5">
+                            {{ $lead->reply }}
+                          </textarea>
+                            <small id="replyMessageHelper" class="form-text text-muted">Type a message to reply</small>
+
+                          </div>
+
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-3 p-3">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Close
                           </button>
-                        </form>
-                      </div>
 
+                          <form {{-- action="{{ route('admin.leads.send', $lead) }}" --}} method="post">
+                            @csrf
+                            <button type="submit" class="btn btn_red">
+                              Send
+                            </button>
+                          </form>
+                        </div>
+
+                      </div>
                     </div>
                   </div>
-                </div>
 
-              </td>
+                  {{-- Generate AI message action --}}
+                  <form action="{{ route('admin.leads.reply_generation', $lead) }}" method="post">
+                    @csrf
 
-            </tr>
-          @empty
+                    <button type="submit" class="action btn_primary me-1">
+                      <a class="text-decoration-none text-white" title="Generate response with AI">
+                        Generate message
+                        <i class="fa-solid fa-wand-magic-sparkles fa-sm ms-1"></i>
+                      </a>
+                    </button>
 
-            <tr class="">
-              <td scope="row" colspan="6">No message yet!</td>
-            </tr>
-          @endforelse
+                  </form>
 
-        </tbody>
-      </table>
+                  {{-- Delete action --}}
+                  <!-- Modal trigger button -->
+                  <button type="button" class="action btn_red" data-bs-toggle="modal"
+                    data-bs-target="#modalId-{{ $lead->id }}" title="Delete">
+                    Delete
+                    <i class="fa-solid fa-trash-can fa-sm ms-1"></i>
+                  </button>
 
+                  <!-- Modal Body -->
+                  <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                  <div class="modal fade" id="modalId-{{ $lead->id }}" tabindex="-1" data-bs-backdrop="static"
+                    data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId-{{ $lead->id }}"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+                      <div class="modal-content">
+
+                        <div class="modal-header justify-content-center align-items-center bg-danger">
+                          <h5 class="modal-title text-center text-white" id="modalTitleId">
+                            ⚠️ ATTENTION ⚠️
+                            <br>
+                            This action is irreversible
+                          </h5>
+                        </div>
+
+                        <div class="modal-body text-center">
+                          You are about to delete the message from "{{ $lead->name }}"
+                          <br>
+                          Are you sure you want to delete this message?
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-3 p-3">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Close
+                          </button>
+
+                          <form {{-- action="{{ route('admin.leads.destroy', $lead) }}" --}} method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn_red">
+                              Confirm
+                            </button>
+                          </form>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </td>
+
+              </tr>
+            @empty
+
+              <tr class="">
+                <td scope="row" colspan="6">No message yet!</td>
+              </tr>
+            @endforelse
+
+          </tbody>
+        </table>
+
+      </div>
+      {{ $leads->links('pagination::bootstrap-5') }}
     </div>
-    {{ $leads->links('pagination::bootstrap-5') }}
 
   </div>
 
