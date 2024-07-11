@@ -7,9 +7,9 @@ body {
   color: $color_lighter;
 }
 
-main {
+/* main {
   background-color: $color_light;
-}
+} */
 
 .bg_dark {
   background-color: $color_dark;
@@ -318,6 +318,7 @@ main {
 
 /* #endregion :::: OFFCANVAS :::: */
 
+
 /* #region :::: PAGINATION :::: */
 .pagination_wrapper {
 
@@ -437,3 +438,78 @@ main {
 
 
 /* #endregion :::: DASHBOARD :::: */
+
+
+/* #region :::: LOGIN :::: */
+
+.form_area {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: $color_dark;
+  height: auto;
+  width: auto;
+  border: 2px solid #264143;
+  border-radius: 20px;
+  box-shadow: 3px 4px 0px 1px $color_primary;
+}
+
+.title {
+  color: $color_lighter;
+  font-weight: 900;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.sub_title {
+  color: $color_lighter;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin: 10px;
+}
+
+.form_style {
+  outline: none;
+  border: 2px solid $color_lighter;
+  box-shadow: 3px 4px 0px 1px $color_primary_hover_border;
+  width: 100%;
+  padding: 12px 10px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.form_style:focus,
+.login_button:focus {
+  transform: translateY(4px);
+  box-shadow: 1px 2px 0px 0px $color_primary_hover_border;
+}
+
+.login_button {
+  padding: 15px;
+  margin: 25px 0px;
+  width: 100%;
+  font-size: 1.3rem;
+  background: $color_primary;
+  color: white;
+  border-radius: 10px;
+  font-weight: 800;
+  box-shadow: 3px 3px 0px 0px $color_primary_hover_border;
+}
+
+.login_button:hover {
+  opacity: .9;
+}
+
+.link {
+  font-weight: 800;
+  color: $color_primary;
+  padding: 5px;
+}
+
+/* #endregion :::: LOGIN :::: */

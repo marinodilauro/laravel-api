@@ -66,7 +66,7 @@ class ProjectController extends Controller
         }
 
         // Redirect
-        return to_route('admin.dashboard')->with('message', "New project added succesfully!");
+        return to_route('admin.projects.index')->with('message', "New project added succesfully!");
     }
 
     /**
@@ -145,6 +145,6 @@ class ProjectController extends Controller
         $project->delete();
 
         // Redirect
-        return to_route('admin.dashboard')->with('message', "Project $project->title deleted succesfully!");
+        return to_route('admin.projects.index')->with('message', "Project $project->title deleted succesfully!");
     }
 }
