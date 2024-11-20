@@ -85,6 +85,6 @@ class TechnologyController extends Controller
     {
         $technology->delete();
 
-        return to_route('admin.dashboard')->with('message', "Type $technology->name deleted succesfully!");
+        return to_route('/')->with('message', "Type $technology->name deleted succesfully!");
     }
 }

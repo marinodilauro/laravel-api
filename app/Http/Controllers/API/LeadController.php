@@ -7,6 +7,7 @@ use App\Mail\NewLeadMessage;
 use App\Models\Lead;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class LeadController extends Controller
@@ -33,13 +34,31 @@ class LeadController extends Controller
 
         $newLead = Lead::create($data);
 
-        // send the email
-        Mail::to('marinodilauro@email.com')->send(new NewLeadMessage($newLead));
+        try {
+            $newLead = Lead::create($data);
 
-        // return the response
-        return response()->json([
-            'success' => true,
-            'message' => 'Email sent!'
-        ]);
+            // send the email with error handling
+            try {
+                Mail::to('dilamar900@gmail.com')->send(new NewLeadMessage($newLead));
+                Log::info('Email sent successfully for lead: ' . $newLead->id);
+            } catch (\Exception $e) {
+                Log::error('Failed to send email: ' . $e->getMessage());
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Message saved but email delivery failed'
+                ], 500);
+            }
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Email sent successfully!'
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Failed to create lead: ' . $e->getMessage());
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to process request'
+            ], 500);
+        }
     }
 }

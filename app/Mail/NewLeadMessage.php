@@ -12,6 +12,7 @@ use Illuminate\Queue\SerializesModels;
 class NewLeadMessage extends Mailable
 {
     use Queueable, SerializesModels;
+    public $data;
 
     /**
      * Create a new message instance.
